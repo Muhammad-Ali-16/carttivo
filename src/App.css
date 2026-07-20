@@ -1,1 +1,27 @@
 @import "tailwindcss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+:root {
+    --bg-secondary: #8e8270;
+    --bg-primary: #f7f7f7;
+    --text-light: #f7f7f7;
+    --text-dark: #1c2021;
+}
+
+a{
+      font-family: "Urbanist", sans-serif;
+}
+
+.nav-scroll {
+    position: fixed;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    transform: translateY(90px);
+    transition: .5s all;
+    z-index: 999;
+}
+
+.bi::before{
+    font-weight: 600 !important;
+}

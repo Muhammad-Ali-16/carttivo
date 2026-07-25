@@ -1,7 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useCart } from '../../context/CartContext'
+
 
 function Navbar() {
+
+    const { cart } = useCart()
 
     const [isScroll, setIsScroll] = useState(false)
 
@@ -25,15 +29,14 @@ function Navbar() {
 
     return (
         <nav
-            className={`navbar-main absolute z-10 w-full max-lg:px-2 max-lg:bg-[var(--bg-primary)] ${isScroll ? 'nav-scroll bg-[var(--bg-primary)] shadow-md shadow-[#6867676e]' : ''}`}
+            className={`navbar-main absolute z-10 w-full max-lg:px-2 ${isScroll ? 'nav-scroll bg-[var(--bg-primary)] shadow-md shadow-[#6867676e]' : ''}`}
         >
-            <div className="nav-content-main flex justify-between items-center mx-auto max-w-7xl h-18">
+            <div className="nav-content-main width-common flex justify-between items-center h-18">
                 <div className="logo flex items-center">
-                    <div className="toggle-btn lg:hidden block max-lg:text-[var(--text-dark)] font-extrabold text-2xl cursor-pointer">
+                    <div className={`toggle-btn lg:hidden block font-extrabold text-2xl cursor-pointer ${textColorClass}`}>
                         <i className="bi bi-text-left"></i>
-                        </div>
-                    <img src={`${isScroll ? '/logo.png' : '/logo-scroll.png'}`} alt="logo" className='lg:w-40 lg:block hidden' />
-                    <img src='/logo.png' alt="logo" className='lg:hidden block w-28' />
+                    </div>
+                    <img src={`${isScroll ? '/logo.png' : '/logo-scroll.png'}`} alt="logo" className='lg:w-40 w-28' />
                 </div>
                 <ul className={`nav-items flex gap-8 uppercase text-xs font-semibold max-lg:hidden ${textColorClass}`}>
                     <li className="nav-link">
@@ -67,7 +70,7 @@ function Navbar() {
                         </a>
                     </li>
                 </ul>
-                <div className={`feautres-main flex items-center lg:gap-6 gap-4 max-lg:text-[var(--text-dark)] ${textColorClass}`}>
+                <div className={`feautres-main flex items-center lg:gap-6 gap-4 ${textColorClass}`}>
                     <button className="search-btn">
                         <a href="?">
                             <i className="bi bi-search text-md lg:text-lg"></i>
@@ -83,9 +86,17 @@ function Navbar() {
                             <i className="bi bi-heart text-md lg:text-lg"></i>
                         </a>
                     </button>
-                    <button className="cart-btn">
+                    <button className="cart-btn relative">
                         <a href="?">
                             <i className="bi bi-cart2 text-md lg:text-xl"></i>
+                            {cart.length === 0
+                                ? null
+                                : <span
+                                    className='lg:h-4.5 lg:w-4.5 w-3 h-3 flex justify-center items-center bg-[var(--bg-secondary)] text-white text-[8px] lg:text-xs absolute -top-1 lg:-top-2 -right-1 lg:-right-2 rounded-full'
+                                >
+                                    {cart.length}
+                                </span>
+                            }
                         </a>
                     </button>
                 </div>

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { GetAllProdcuts } from '../services/api'
 import { useCart } from '../context/CartContext'
+import { useWishlist } from '../context/WishlistContext'
 
 function AllProdcuts() {
 
     const { addToCart } = useCart()
+    const { toggleWishlist, isInWishlist } = useWishlist()
 
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -24,11 +26,9 @@ function AllProdcuts() {
     if (loading) return <p>Loading...</p>
     if (error) return <p>{error}</p>
 
-
-
     return (
-            <section className='prodcuts-main w-full'>
-                <div className='product-content-main width-common'>
+        <section className='prodcuts-main w-full'>
+            <div className='product-content-main width-common'>
                 {category.map((cat, i) => (
                     <div key={i} className='card-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                         {cat.items.map((product) => {
@@ -41,7 +41,7 @@ function AllProdcuts() {
                                 <div key={product.id} className='card rounded-sm relative'>
 
                                     {product.discount > 0 && (
-                                        <div className="discount-badge absolute right-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr-sm flex products-center gap-1 z-10">
+                                        <div className="discount-badge absolute right-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr-sm flex products-center gap-1 z-5">
                                             <i className="bi bi-tag-fill"></i>
                                             -{product.discount}%
                                         </div>
@@ -90,9 +90,16 @@ function AllProdcuts() {
                                                 </button>
                                             }
 
-                                            <div className="wishlist image-overlay-btn cursor-pointer py-2.5 px-3">
-                                                <i className="bi bi-heart"></i>
-                                            </div>
+                                            <button
+                                                className="wishlist-btn image-overlay-btn cursor-pointer py-2.5 px-3"
+                                                onClick={() => { toggleWishlist(product) }}
+                                            >
+                                                {isInWishlist(product.id)
+                                                    ? <i className="bi bi-heart-fill text-[#d17175]"></i>
+                                                    : <i className="bi bi-heart"></i>
+                                                }
+
+                                            </button>
                                         </div>
                                     </div>
 
@@ -125,8 +132,8 @@ function AllProdcuts() {
                     </div>
 
                 ))}
-                  </div>
-            </section>
+            </div>
+        </section>
     )
 }
 

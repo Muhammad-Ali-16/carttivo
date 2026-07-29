@@ -16,6 +16,15 @@ a {
     font-family: "Urbanist", sans-serif;
 }
 
+.font-urbanist{
+    font-family: "Urbanist", sans-serif;
+}
+
+
+.font-nter{
+  font-family: "Inter", sans-serif;
+}
+
 .width-common {
     max-width: 1800px;
     margin: 0 auto;
@@ -36,10 +45,15 @@ a {
     width: 100%;
     transform: translateY(90px);
     transition: .5s all;
-    z-index: 999;
+    z-index: 10;
 }
 
 .navbar-main .bi::before {
+    font-weight: 600 !important;
+}
+
+
+.overlay-top .bi::before {
     font-weight: 600 !important;
 }
 
@@ -83,7 +97,7 @@ a {
     transform: rotate(-45deg);
     left: -36%;
     top: 6%;
-    z-index: 10;
+    z-index: 5;
 }
 
 .card:hover .image-overlay {

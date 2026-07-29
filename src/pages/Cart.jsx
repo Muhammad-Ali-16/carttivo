@@ -3,7 +3,7 @@ import { useCart } from '../context/CartContext'
 
 function Cart() {
 
-    const { cart } = useCart()
+    const { cart, removeFromCart, increaseCartQuantity, decreaseCartQuantity } = useCart()
 
     if (cart.length === 0) return <h4>Your Cart is Empty</h4>
 
@@ -27,15 +27,32 @@ function Cart() {
                             </td>
                             <td className='border border-black text-left'>
                                 <h4>{item.title}</h4>
-                                <button onClick={()=>{ item.id == remove}}>delete</button>
                             </td>
                             <td className='border border-black text-center'>
                                 <h4>{item.quantity}</h4>
+                                <button
+                                    className={` ${item.quantity === 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'}`}
+                                    onClick={() => decreaseCartQuantity(item.id)}
+                                >
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                                <button
+                                className=' cursor-pointer'
+                                    onClick={() => removeFromCart(item.id)}
+                                >
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                                <button
+                                    className={` ${item.quantity === item.stock ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'}`}
+                                    onClick={() => increaseCartQuantity(item.id)}
+                                >
+                                    <i class="bi bi-plus"></i>
+                                </button>
                             </td>
                             <td className='border border-black text-center'>
-                                <h4>{item.price}</h4>
+                                <h4>${item.price}</h4>
                             </td>
-                            <td className='border border-black text-center'>Total Price</td>
+                            <td className='border border-black text-center'>${(item.price * item.quantity).toFixed(2)}</td>
                         </tr>
                     ))}
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../compnents/home/HeroSection'
+import HeroSection from '../components/home/HeroSection'
 import AllProdcuts from './AllProdcuts'
 
 function Home() {

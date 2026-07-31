@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+:root {
+    --bg-secondary: #8e8270;
+    --bg-primary: #f7f7f7;
+    --bg-dark: #1c2021;
+    --bg-light: #e6e7ea6e;
+    --text-light-2: #6e7275;
+    --text-light: #f7f7f7;
+    --text-dark: #1c2021;
+    --text-secondary: #8e8270;
+}
+
+a {
+    font-family: "Urbanist", sans-serif;
+}
+
+.font-urbanist{
+    font-family: "Urbanist", sans-serif;
+}
+
+
+.font-nter{
+  font-family: "Inter", sans-serif;
+}
+
+.width-common {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 992px) {
+.width-common {
+    padding: 0 14px;
+}
+    
+}
+
+.nav-scroll {
+    position: fixed;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    transform: translateY(90px);
+    transition: .5s all;
+    z-index: 10;
+}
+
+.navbar-main .bi::before {
+    font-weight: 600 !important;
+}
+
+
+.overlay-top .bi::before {
+    font-weight: 600 !important;
+}
+
+.product-img-1 {
+    transition: all .2s;
+    transform: scale(1);
+}
+
+.card:hover .product-img-1 {
+    transform: scale(1.1);
+    opacity: 0;
+}
+
+.product-img-2 {
+    opacity: 0;
+    transform: scale(1);
+    transition: all .2s;
+}
+
+.card:hover .product-img-2 {
+    transform: scale(1.1);
+    opacity: 100;
+}
+
+.image-overlay {
+    position: absolute;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: all .2s;
+    transform: translateY(40px);
+}
+
+.image-label-main{
+    position: absolute;
+    transform: rotate(-45deg);
+    left: -36%;
+    top: 6%;
+    z-index: 5;
+}
+
+.card:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.image-overlay-btn {
+    transition: all .2s;
+}
+
+.image-overlay-btn:hover {
+    background-color: var(--bg-secondary);
+}

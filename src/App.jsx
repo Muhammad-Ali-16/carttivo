@@ -1,5 +1,9 @@
 import './App.css'
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router"
+=======
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+>>>>>>> 189396ada4c873217cc52936b7e313618505636c
 import { CartProvider } from './context/CartContext'
 import { WishlistProvider } from './context/WishlistContext'
 import Navbar from './components/layout/Navbar'
@@ -24,9 +28,17 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/wishlist" element={<Wishlist />} />
 
+<<<<<<< HEAD
                 {/* <Route path="/about" element={<><PagesLayout title='About Us' /> <PageAbout /></>} /> */}
 
               </Route>
+=======
+              </Route>
+              {/* <Route element={<Layout />}>
+                <Route path="/about" element={<><PagesLayout title='About Us' /> <PageAbout /></>} />
+              </Route> */}
+
+>>>>>>> 189396ada4c873217cc52936b7e313618505636c
             </Routes>
           </BrowserRouter>
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Link } from 'react-router'
+=======
+import { Link } from 'react-router-dom'
+>>>>>>> 189396ada4c873217cc52936b7e313618505636c
 import { useState, useEffect } from 'react'
 import { useCart } from '../../context/CartContext'
 import { useWishlist } from '../../context/WishlistContext'
@@ -106,6 +110,7 @@ function CartOverlay({ cartOverlayOpen, setCartOverlayOpen }) {
                                     View Cart
                                 </Link>
                             </button>
+<<<<<<< HEAD
                             <button type="button" className='order relative w-full py-2 border border-black hover:border-[var(--bg-secondary)] bg-black/88 text-white hover:bg-[var(--bg-secondary)] rounded-full cursor-pointer'>
                                 <Link to='/cart'>
                                     Place Order
@@ -114,6 +119,17 @@ function CartOverlay({ cartOverlayOpen, setCartOverlayOpen }) {
                         </div>
                     </div>
                 }
+=======
+                            <Link to='/cart' type="button" className='order relative w-full py-2 border border-black hover:border-[var(--bg-secondary)] bg-black/88 text-white hover:bg-[var(--bg-secondary)] rounded-full cursor-pointer'>
+                                
+                                    Place Order
+                               
+                            </Link>
+                        </div>
+                    </div>
+                }
+
+>>>>>>> 189396ada4c873217cc52936b7e313618505636c
             </div>
         </div >
     )
@@ -234,6 +250,10 @@ function Navbar() {
                         <button className="cart-btn relative cursor-pointer"
                             onClick={() => { setCartOverlayOpen(true) }}
                         >
+<<<<<<< HEAD
+=======
+                            <Link to="/cart">
+>>>>>>> 189396ada4c873217cc52936b7e313618505636c
                                 <i className="bi bi-cart2 text-md lg:text-xl"></i>
                                 {cart.length === 0
                                     ? null
@@ -243,6 +263,10 @@ function Navbar() {
                                         {cart.length}
                                     </span>
                                 }
+<<<<<<< HEAD
+=======
+                            </Link>
+>>>>>>> 189396ada4c873217cc52936b7e313618505636c
                         </button>
 
                     </div>

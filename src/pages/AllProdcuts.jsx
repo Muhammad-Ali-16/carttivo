@@ -24,7 +24,7 @@ function AllProdcuts() {
     if (error) return <p>{error}</p>
 
     return (
-        <section className='prodcuts-main w-full'>
+        <section className='prodcuts-main w-full pt-[100px]'>
             <div className='product-content-main width-common'>
                          {category.map((cat, i) => (
                  <ProdcutCard cat={cat} key={i}/>

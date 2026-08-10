@@ -1,5 +1,5 @@
 import { Outlet } from "react-router"
-import NavBar from "./NavBar"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 
@@ -7,7 +7,7 @@ function Layout() {
     return (
         <div className="relative">
             <header>
-                <NavBar />
+                <Navbar />
             </header>
             <main>
                 <Outlet />

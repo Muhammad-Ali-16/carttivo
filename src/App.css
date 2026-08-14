@@ -5,6 +5,7 @@
     --bg-secondary: #8e8270;
     --bg-primary: #f7f7f7;
     --bg-dark: #1c2021;
+    --bg-drop-down:#eeeff1;
     --bg-light: #e6e7ea6e;
     --text-light-2: #6e7275;
     --text-light: #f7f7f7;
@@ -21,7 +22,7 @@ a {
 }
 
 
-.font-nter{
+.font-Inter{
   font-family: "Inter", sans-serif;
 }
 

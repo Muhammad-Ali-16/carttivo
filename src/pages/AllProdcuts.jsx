@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { GetAllProdcuts } from '../services/api'
+import { GetAllProducts } from '../services/api'
 import ProdcutCard from '../components/layout/ProdcutCard'
 
 function AllProdcuts() {
@@ -12,7 +12,7 @@ function AllProdcuts() {
 
     useEffect(() => {
 
-        GetAllProdcuts()
+        GetAllProducts()
             .then((data) => {
                 setCategory(data)
             })

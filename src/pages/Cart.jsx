@@ -10,8 +10,9 @@ function Cart() {
     )
 
     return (
-        <section className='cart-main flex gap-2 p-4'>
-            <table className='max-w-5xl w-full border-collapse shadow-sm rounded-lg overflow-hidden'>
+        <section className='cart-main flex gap-2 p-4 max-w-7xl'>
+        <div className="max-w-5xl w-full overflow-x-auto">
+            <table className='w-full border-collapse shadow-sm rounded-lg'>
                 <thead>
                     <tr className='bg-gray-100 text-sm'>
                         <td className='border border-gray-300 text-center font-semibold py-3 px-2'>Image</td>
@@ -69,6 +70,7 @@ function Cart() {
                     ))}
                 </tbody>
             </table>
+            </div>
         </section>
     )
 }

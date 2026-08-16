@@ -203,11 +203,17 @@ function Navbar() {
 
   return (
     <header className="relative">
+      {/* >----------------->Cart-Overlay<---------------< */}
       <CartOverlay
         cartOverlayOpen={cartOverlayOpen}
         setCartOverlayOpen={setCartOverlayOpen}
       />
-
+      {/* >----------------->NavBar-Overlay<---------------< */}
+      <NavOverlay
+        navOverlayOpen={navOverlayOpen}
+        setNavOverlayOpen={setNavOverlayOpen}
+        category={category}
+      />
       {/* >----------------->NavBar<---------------< */}
       <nav
         className={`navbar-main z-10 w-full max-lg:px-2 ${isHome ? "absolute" : "relative"
@@ -216,9 +222,6 @@ function Navbar() {
             : ""
           }`}
       >
-
-        {/* >----------------->NavBar-Overlay<---------------< */}
-        <NavOverlay navOverlayOpen={navOverlayOpen} setNavOverlayOpen={setNavOverlayOpen} category={category} />
 
         <div className="nav-content-main width-common flex justify-between items-center h-18">
           {/* >----------------->Logo<---------------< */}
@@ -357,7 +360,7 @@ function Navbar() {
           </div>
 
         </div>
-        
+
       </nav>
     </header >
   );

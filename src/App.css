@@ -13,6 +13,14 @@
     --text-secondary: #8e8270;
 }
 
+h1,h2,h3,h4,h5{
+     font-family: "Urbanist", sans-serif;
+}
+
+h6{
+     font-family: "Inter", sans-serif;
+}
+
 a {
     font-family: "Urbanist", sans-serif;
 }

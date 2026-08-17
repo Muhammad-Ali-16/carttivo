@@ -202,7 +202,7 @@ function Navbar() {
     : "text-[var(--text-light)]";
 
   return (
-    <header className="relative">
+    <header className="relative z-10">
       {/* >----------------->Cart-Overlay<---------------< */}
       <CartOverlay
         cartOverlayOpen={cartOverlayOpen}

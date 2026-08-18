@@ -7,6 +7,7 @@
     --bg-dark: #1c2021;
     --bg-drop-down:#eeeff1;
     --bg-light: #e6e7ea6e;
+    --bg-light-2:#d5dadce6;
     --text-light-2: #6e7275;
     --text-light: #f7f7f7;
     --text-dark: #1c2021;
@@ -45,6 +46,13 @@ a {
     padding: 0 14px;
 }
     
+}
+
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nav-scroll {

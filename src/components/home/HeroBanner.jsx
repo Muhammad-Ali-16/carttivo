@@ -1,6 +1,7 @@
 import BannerImg1 from '../../assets/hero-banner-1.webp'
 import BannerImg2 from '../../assets/hero-banner-2.webp'
 import BannerImg3 from '../../assets/hero-banner-3.webp'
+import BannerImg4 from '../../assets/season-sale-bg.webp'
 import { Link } from 'react-router'
 
 function HeroBanner() {
@@ -39,7 +40,7 @@ function HeroBanner() {
             variant: 'plain'
         },
         {
-            image: BannerImg1,
+            image: BannerImg4,
             title: 'Cozy Comforters for Cold Days',
             price: null,
             linkText: 'Learn More',

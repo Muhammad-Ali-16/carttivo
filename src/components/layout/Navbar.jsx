@@ -5,6 +5,7 @@ import { useWishlist } from "../../context/WishlistContext";
 import { GetAllProducts } from "../../services/api";
 import CartOverlay from "./CartOverlay";
 import NavOverlay from "./NavOverlay";
+import ProductCardSmall from "./ProductCardSmall";
 
 function ShopDropDown() {
 
@@ -25,7 +26,7 @@ function ShopDropDown() {
 
   return (
 
-    <div className="drop-down-main fixed left-0 top-17.5 bg-[var(--bg-primary)] text-[var(--text-dark)] w-screen flex flex-col gap-8  hidden group-hover:block">
+    <div className="drop-down-main fixed left-0 top-17.5 bg-(--bg-primary) text-(--text-dark) w-screen flex-col gap-8  hidden group-hover:flex">
       <div className="collections-main flex flex-col gap-4 p-8">
         {/* >----------------->Collections<---------------< */}
         <h1 className="text-lg">Collections</h1>
@@ -48,7 +49,7 @@ function ShopDropDown() {
         </div>
       </div>
       {/* >----------------->Top-Sellers<---------------< */}
-      <div className="top-sellers bg-[var(--bg-drop-down)] p-8">
+      <div className="top-sellers bg-(--bg-drop-down) p-8">
         <h1 className="text-lg mb-3">Top Sellers</h1>
         <div className="content-main flex flex-row gap-7 overflow-auto">
           {category
@@ -66,80 +67,10 @@ function ShopDropDown() {
 
               return (
                 <div
-                  className="card bg-[var(--bg-primary)] border border-black/20 flex flex-row items-center justify-between p-2 gap-3 min-w-[280px]"
+                  className="card bg-(--bg-primary) border border-black/20 flex flex-row items-center justify-between p-2 gap-3 min-w-70"
                   key={item.id ?? item.title}
                 >
-                  {/* >----------------->Card-Content<---------------< */}
-                  <div className="card-content flex flex-row justify-center items-center gap-2">
-                    <img
-                      src={item.image1}
-                      alt={item.title}
-                      className="w-20 h-20 object-cover bg-center rounded-sm"
-                    />
-                    {/* >----------------->Card-Discription<---------------< */}
-                    <div className="discription">
-                      <h1 className="text-black/50 font-semibold text-xs"> {item.title}</h1>
-                      {discountedPrice ? (
-                        <div className="flex flex-row gap-2 justify-center items-center">
-                          <span className=" text-black/70">
-                            ${discountedPrice}
-                          </span>
-                          <s className=" text-red-500">
-                            ${item.price}
-                          </s>
-                        </div>
-                      ) : (
-                        <span className="text-black/70">
-                          ${item.price}
-                        </span>
-                      )}
-
-                      <div className="text-xs text-black/60">
-                        {/* >----------------->Cart-Button<---------------< */}
-                        {item.inStock ? (
-                          <button
-                            className="cart-btn cursor-pointer"
-                            onClick={() => {
-                              addToCart(item);
-                            }}
-                          >
-                            <i className="bi bi-cart-plus"></i>
-                          </button>
-                        ) : (
-                          <button className="out-stock cursor-not-allowed select-none">
-                            <i className="bi bi-ban"></i>
-                          </button>
-                        )}
-
-                        {/* >----------------->Wishlist-Button<---------------< */}
-                        <button
-                          className="wishlist-btn cursor-pointer py-2.5 px-3"
-                          onClick={() => {
-                            toggleWishlist(item);
-                          }}
-                        >
-                          {isInWishlist(item.id) ? (
-                            <i className="bi bi-heart-fill text-[#d17175]"></i>
-                          ) : (
-                            <i className="bi bi-heart"></i>
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* >----------------->Product-Number<---------------< */}
-                  <div className="number">
-                    <h1
-                      className="text-5xl"
-                      style={{
-                        WebkitTextStroke:
-                          "1px rgba(12, 12, 12, 0.65)",
-                        color: "transparent",
-                      }}
-                    >
-                      {i + 1}
-                    </h1>
-                  </div>
+                  <ProductCardSmall item={item} discountedPrice={discountedPrice} number={i + 1} />
                 </div>
               );
             })}
@@ -198,8 +129,8 @@ function Navbar() {
   const isSolid = isHome ? isScroll : true;
 
   const textColorClass = isSolid
-    ? "text-[var(--text-dark)]"
-    : "text-[var(--text-light)]";
+    ? "text-(--text-dark)"
+    : "text-(--text-light)";
 
   return (
     <header className="relative z-10">
@@ -248,7 +179,7 @@ function Navbar() {
               <Link to="/" className="uppercase">Shop
                 <i className="bi bi-caret-down-fill text-[10px] text-black/50 ms-1"></i>
               </Link>
-              <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-[var(--bg-primary)] text-xs z-10 hidden group-hover:block"></i>
+              <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-(--bg-primary) text-xs z-10 hidden group-hover:block"></i>
               {/* >----------------->Shop-Drop-Down<---------------< */}
               <ShopDropDown />
             </li>
@@ -257,28 +188,28 @@ function Navbar() {
               <Link to="/" className="uppercase">Pages
                 <i className="bi bi-caret-down-fill text-[10px] text-black/50 ms-1"></i>
               </Link>
-              <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-[var(--bg-primary)] text-xs z-10 hidden group-hover:block"></i>
+              <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-(--bg-primary) text-xs z-10 hidden group-hover:block"></i>
 
               {/* >----------------->Pages-Drop-Down<---------------< */}
-              <div className="drop-down-main absolute left-1/2 -translate-x-1/2 top-19 text-[14px] p-3 text-center rounded-sm w-[140px] bg-[var(--bg-primary)] text-[var(--text-dark)] hidden group-hover:block">
+              <div className="drop-down-main absolute left-1/2 -translate-x-1/2 top-19 text-[14px] p-3 text-center rounded-sm w-35 bg-(--bg-primary) text-(--text-dark) hidden group-hover:block">
                 <ul className="flex flex-col gap-2">
                   <li>
-                    <Link className="hover:text-[var(--text-secondary)]">All Products</Link>
+                    <Link className="hover:text-(--text-secondary)">All Products</Link>
                   </li>
                   <li>
-                    <Link className="hover:text-[var(--text-secondary)]">FAQ</Link>
+                    <Link className="hover:text-(--text-secondary)">FAQ</Link>
                   </li>
                   <li>
-                    <Link className="hover:text-[var(--text-secondary)]">About Us</Link>
+                    <Link className="hover:text-(--text-secondary)">About Us</Link>
                   </li>
                   <li>
-                    <Link className="hover:text-[var(--text-secondary)]">Contact Us</Link>
+                    <Link className="hover:text-(--text-secondary)">Contact Us</Link>
                   </li>
                   <li>
-                    <Link className="hover:text-[var(--text-secondary)]">404 Page</Link>
+                    <Link className="hover:text-(--text-secondary)">404 Page</Link>
                   </li>
                   <li>
-                    <Link className="hover:text-[var(--text-secondary)]">Journal Blog</Link>
+                    <Link className="hover:text-(--text-secondary)">Journal Blog</Link>
                   </li>
                 </ul>
               </div>
@@ -290,17 +221,17 @@ function Navbar() {
                 All Products
                 <i className="bi bi-caret-down-fill text-[10px] text-black/50 ms-1"></i>
               </Link>
-              <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-[var(--bg-primary)] text-xs z-10 hidden group-hover:block"></i>
+              <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-(--bg-primary) text-xs z-10 hidden group-hover:block"></i>
 
               {/* >----------------->All-Products-Drop-Down<---------------< */}
               <div
-                className="drop-down-main absolute left-1/2 -translate-x-1/2 top-19 text-[14px] p-3 text-center rounded-sm grid-rows-1 grid-cols-2 w-[400px] gap-5 bg-[var(--bg-primary)] text-[var(--text-dark)] hidden group-hover:grid">
+                className="drop-down-main absolute left-1/2 -translate-x-1/2 top-19 text-[14px] p-3 text-center rounded-sm grid-rows-1 grid-cols-2 w-100 gap-5 bg-(--bg-primary) text-(--text-dark) hidden group-hover:grid">
                 {category.slice(7).map((product) => (
                   <div className="product-card flex flex-row gap-3 items-center justify-start" key={product.category}>
                     <div className="img w-10 h-10 overflow-hidden rounded-full border border-black/20">
                       <img src={product.items[0].image1} alt={product.category} className="object-cover" />
                     </div>
-                    <h1 className="text-gray-600 hover:text-[var(--bg-secondary)]">{product.category}</h1>
+                    <h1 className="text-gray-600 hover:text-(--bg-secondary)">{product.category}</h1>
                   </div>
                 ))}
               </div>
@@ -336,7 +267,7 @@ function Navbar() {
               <Link to="/wishlist">
                 <i className="bi bi-heart text-md lg:text-lg"></i>
                 {wishlist.length === 0 ? null : (
-                  <span className="lg:h-4.5 lg:w-4.5 w-3 h-3 flex justify-center items-center bg-[var(--bg-secondary)] text-white text-[8px] lg:text-xs absolute -top-1 lg:-top-2 -right-1 lg:-right-2 rounded-full">
+                  <span className="lg:h-4.5 lg:w-4.5 w-3 h-3 flex justify-center items-center bg-(--bg-secondary) text-white text-[8px] lg:text-xs absolute -top-1 lg:-top-2 -right-1 lg:-right-2 rounded-full">
                     {wishlist.length}
                   </span>
                 )}
@@ -352,7 +283,7 @@ function Navbar() {
             >
               <i className="bi bi-cart2 text-md lg:text-xl"></i>
               {cart.length === 0 ? null : (
-                <span className="lg:h-4.5 lg:w-4.5 w-3 h-3 flex justify-center items-center bg-[var(--bg-secondary)] text-white text-[8px] lg:text-xs absolute -top-1 lg:-top-2 -right-1 lg:-right-2 rounded-full">
+                <span className="lg:h-4.5 lg:w-4.5 w-3 h-3 flex justify-center items-center bg-(--bg-secondary) text-white text-[8px] lg:text-xs absolute -top-1 lg:-top-2 -right-1 lg:-right-2 rounded-full">
                   {cart.length}
                 </span>
               )}

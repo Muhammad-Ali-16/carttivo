@@ -21,6 +21,7 @@ function ShopByCategory() {
         <div className="shop-category-main flex flex-col gap-4 p-8 overflow-x-hidden py-10">
             <div className="shop-category-content width-common flex flex-col gap-5 w-full min-w-0">
 
+                {/* >----------------->Section-Heading<---------------< */}
                 <div className="flex justify-center">
                     <SectionTitle title="Shop by Category" />
                 </div>
@@ -28,6 +29,7 @@ function ShopByCategory() {
                 {loading && <p className="text-center">Loading categories...</p>}
                 {error && <p className="text-red-500 text-center">{error}</p>}
 
+                {/* >----------------->Cards<---------------< */}
                 {!loading && !error && (
                     <div className="cards flex flex-row gap-5 overflow-x-auto w-full">
                         {category.slice(0, 7).map((cat) => (

@@ -51,7 +51,7 @@ function HeroBanner() {
     return (
 
         <section className="hero-banner-main w-full py-10 md:py-20">
-            <div className="banner-content width-common grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-4 h-auto md:h-[500px]">
+            <div className="banner-content width-common grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-4 h-auto md:h-125">
                 {cards.map((card, i) => {
                     const isTall = card.variant === 'tall'
                     const isPlain = card.variant === 'plain'
@@ -60,8 +60,8 @@ function HeroBanner() {
                         <div
                             key={i}
                             className={`relative overflow-hidden group cursor-pointer
-                                ${isTall ? 'md:row-span-2 h-[400px] md:h-full' : 'h-[300px] md:h-full'}
-                                ${card.image ? '' : 'bg-[var(--bg-secondary)]'}`}
+                                ${isTall ? 'md:row-span-2 h-100 md:h-full' : 'h-75 md:h-full'}
+                                ${card.image ? '' : 'bg-(--bg-secondary)'}`}
                         >
                             {card.image && (
                                 <img

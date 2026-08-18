@@ -5,6 +5,7 @@
     --bg-secondary: #8e8270;
     --bg-primary: #f7f7f7;
     --bg-dark: #1c2021;
+    --bg-dark-2:#282d2f;
     --bg-drop-down:#eeeff1;
     --bg-light: #e6e7ea6e;
     --bg-light-2:#d5dadce6;
@@ -127,4 +128,12 @@ a {
 
 .image-overlay-btn:hover {
     background-color: var(--bg-secondary);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

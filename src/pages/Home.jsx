@@ -5,6 +5,7 @@ import HeroBanner from '../components/home/HeroBanner'
 import ShopByCategory from '../components/home/ShopByCategory'
 import FeaturedProducts from '../components/home/FeaturedProducts'
 import SeasonSale from '../components/home/SeasonSale'
+import Brands from '../components/home/Brands'
 
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
       <ShopByCategory />
       <FeaturedProducts />
       <SeasonSale />
+      <Brands/>
     </>
     )
 }

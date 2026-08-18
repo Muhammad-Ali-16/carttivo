@@ -32,12 +32,13 @@ function HeroCarousel() {
 
     return (
         <>
+            {/* >----------------->Carousel<---------------< */}
             <div className="carousel-main flex flex-nowrap transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {carouselItems.map((item, i) => (
                     <div
-                        className="hero-carousel relative h-screen w-full shrink-0 text-center text-[var(--text-light)]"
+                        className="hero-carousel relative h-screen w-full shrink-0 text-center text-(--text-light)"
                         key={i}
                     >
                         {item.videoUrl === null ?
@@ -58,18 +59,20 @@ function HeroCarousel() {
                         <div className="absolute w-full h-full inset-0 bg-black/40"></div>
 
                         <div className="carousel-content width-common flex flex-col justify-center items-center gap-5 lg:gap-8 absolute z-2 inset-0">
-                            <h6 className='text-[var(--text-light)] text-sm bg-[var(--bg-secondary)] px-2 py-1 rounded-full'>{item.subHeading}</h6>
+                            <h6 className='text-(--text-light) text-sm bg-(--bg-secondary) px-2 py-1 rounded-full'>{item.subHeading}</h6>
                             <h1 className='text-5xl lg:text-8xl font-bold'>{item.Heading}</h1>
+
+                            {/* >----------------->Carousel-Btn<---------------< */}
                             <div className="btn-main flex flex-col justify-center items-center md:flex-row gap-3">
                                 <Link
                                     to={item.btn1Link}
-                                    className='bg-[var(--bg-primary)] text-[var(--text-dark)] transition-all duration-150 font-semibold hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] px-4 py-2 rounded-full'
+                                    className='bg-(--bg-primary) text-(--text-dark) transition-all duration-150 font-semibold hover:bg-(--bg-secondary) hover:text-(--text-primary) px-4 py-2 rounded-full'
                                 >
                                     {item.btn1}
                                 </Link>
                                 <Link
                                     to={item.btn2Link}
-                                    className='underline hover:text-[var(--text-secondary)]'
+                                    className='underline hover:text-(--text-secondary)'
                                 >
                                     {item.btn2}
                                 </Link>
@@ -79,6 +82,7 @@ function HeroCarousel() {
                 ))}
             </div>
 
+            {/* >----------------->Pagination<---------------< */}
             <div className="pagination absolute bottom-6 left-1/2 -translate-x-1/2 gap-2 z-1 flex justify-center items-center">
 
                 <div className="prev-btn me-4">

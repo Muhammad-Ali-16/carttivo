@@ -18,13 +18,13 @@ function ProdcutCard({ product, discountedPrice }) {
                 {product.inStock ? (
                     <>
                         {product.stock < 5 ? (
-                            <div className="image-label-main py-1 w-full text-center bg-[#ffebeb] text-[#d17175] text-sm border-y border-black/20">
+                            <div className="image-label-main py-1 w-full text-center bg-[#ffebeb] text-[#d17175] text-[12px] md:text-sm border-y border-black/20">
                                 Limited Stock
                             </div>
                         ) : null}
                     </>
                 ) : (
-                    <div className="image-label-main py-1 w-full text-center bg-[#ffebeb] text-[#d17175] text-sm border-y border-black/20">
+                    <div className="image-label-main py-1 w-full text-center bg-[#ffebeb] text-[#d17175] text-text-[12px] md:text-sm border-y border-black/20">
                         Out Of Stock
                     </div>
                 )}

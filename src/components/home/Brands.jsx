@@ -50,15 +50,15 @@ function Brands() {
     }
 
     return (
-        <div className="card-main px-2 min-w-0 bg-(--bg-dark-2)">
-            <div className="relative width-common">
+        <section className="brands-main px-2 min-w-0 bg-(--bg-dark-2)">
+            <div className="content-main relative width-common">
                 {/* >----------------->Prev-Btn<---------------< */}
                 <button
                     className="cursor-pointer absolute left-1 top-1/2 -translate-y-1/2 z-20 h-8 w-8 text-xs flex items-center justify-center rounded-full text-white border border-white/70 shadow-md"
                     onClick={() => scroll('left')}
                     aria-label="Previous"
                 >
-                    <i class="bi bi-chevron-left"></i>
+                    <i className="bi bi-chevron-left"></i>
                 </button>
                 {/* >----------------->Next-Btn<---------------< */}
                 <button
@@ -66,13 +66,13 @@ function Brands() {
                     onClick={() => scroll('right')}
                     aria-label="Next"
                 >
-                    <i class="bi bi-chevron-right"></i>
+                    <i className="bi bi-chevron-right"></i>
                 </button>
 
                 {/* >----------------->Scrollable row<---------------< */}
                 <div
                     ref={scrollRef}
-                    className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex flex-row gap-7 scrollbar-hide"
+                    className="cards-main overflow-x-auto scroll-smooth snap-x snap-mandatory flex flex-row gap-7 scrollbar-hide"
                 >
                     {BrandsImg.map((item, i) => (
                         <div
@@ -91,7 +91,7 @@ function Brands() {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

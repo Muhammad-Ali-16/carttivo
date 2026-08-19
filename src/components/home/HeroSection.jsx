@@ -59,7 +59,7 @@ function HeroCarousel() {
                         <div className="absolute w-full h-full inset-0 bg-black/40"></div>
 
                         <div className="carousel-content width-common flex flex-col justify-center items-center gap-5 lg:gap-8 absolute z-2 inset-0">
-                            <h6 className='text-(--text-light) text-sm bg-(--bg-secondary) px-2 py-1 rounded-full'>{item.subHeading}</h6>
+                            <h6 className='text-(--text-light) text-[12px] md:text-sm bg-(--bg-secondary) px-2 py-1 rounded-full'>{item.subHeading}</h6>
                             <h1 className='text-5xl lg:text-8xl font-bold'>{item.Heading}</h1>
 
                             {/* >----------------->Carousel-Btn<---------------< */}

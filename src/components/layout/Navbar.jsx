@@ -9,8 +9,6 @@ import ProductCardSmall from "./ProductCardSmall";
 
 function ShopDropDown() {
 
-  const { cart, addToCart } = useCart();
-  const { wishlist, toggleWishlist, isInWishlist } = useWishlist();
   const [category, setCategory] = useState([]);
   const [error, setError] = useState(null);
 

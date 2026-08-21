@@ -137,3 +137,7 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.footer-top .content{
+  scrollbar-width: none;   
+}

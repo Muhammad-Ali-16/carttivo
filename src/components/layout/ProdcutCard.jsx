@@ -72,7 +72,7 @@ function ProdcutCard({ product, discountedPrice }) {
                 </div>
             </div>
 
-            <div className="product-brand text-center py-2.5 text-[var(--text-light-2)] cursor-pointer text-xs font-semibold underline bg-[var(--bg-light)] flex justify-between items-center px-3">
+            <div className="product-brand text-center py-2.5 text-(--text-light-2) cursor-pointer text-xs font-semibold underline bg-(--bg-light) flex justify-between items-center px-3">
                 <h4> {product.brand}</h4>
                 <h4>
                     {product.inStock
@@ -82,10 +82,10 @@ function ProdcutCard({ product, discountedPrice }) {
             </div>
             {/* >----------------->Card-Discription<---------------< */}
             <div className="card-discription flex items-center justify-center flex-col py-3 gap-1">
-                <h4 className="product-title font-semibold transition-all duration-100 text-lg hover:underline hover:text-[var(--text-secondary)]">
+                <h4 className="product-title font-semibold transition-all duration-100 text-lg hover:underline hover:text(--text-secondary)">
                     <a href="?">{product.title}</a>
                 </h4>
-                <div className="product-price text-[var(--text-light-2)] text-sm font-semibold">
+                <div className="product-price text-(--text-light-2) text-sm font-semibold">
                     {discountedPrice ? (
                         <h4>
                             <span className="mr-2 text-[#d17175]">

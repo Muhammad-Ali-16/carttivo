@@ -4,13 +4,31 @@ import { Link } from 'react-router'
 function NavOverlay({ navOverlayOpen, setNavOverlayOpen, category }) {
   const [limit, setLimit] = useState(5)
 
+  const navItems = [
+    { text: 'Home', link: '/', icon: 'bi-house' },
+    { text: 'Account', link: '/', icon: 'bi-person' },
+    { text: 'Contact', link: '/', icon: 'bi-envelope' },
+    { text: 'Blog', link: '/', icon: 'bi-layout-text-window' },
+    { text: 'FAQ', link: '/', icon: 'bi-question-circle-fill' },
+    { text: 'About us', link: '/', icon: 'bi-file-person' },
+    { text: '404 Page', link: '/', icon: 'bi-bug' },
+  ]
+
+  const socialLinks = [
+    { link: '/', icon: 'bi-facebook' },
+    { link: '/', icon: 'bi-instagram' },
+    { link: '/', icon: 'bi-twitter-x' },
+    { link: '/', icon: 'bi-youtube' },
+    { link: '/', icon: 'bi-tiktok' },
+  ]
+
   return (
     <div
       className={`nav-overlay-main fixed inset-0 z-50 bg-black/60 transition-opacity duration-200 ease-in-out lg:hidden
                  ${navOverlayOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
     >
       <div
-        className={`overlay-content-main absolute top-0 left-0 bg-white w-full max-w-[280px] md:max-w-[380px] overflow-y-auto h-screen flex flex-col justify-between transition-transform duration-200 ease-in-out
+        className={`overlay-content-main absolute top-0 left-0 bg-white w-full max-w-70 md:max-w-95 overflow-y-auto h-screen flex flex-col justify-between transition-transform duration-200 ease-in-out
                  ${navOverlayOpen ? 'translate-x-0' : '-translate-x-full'}`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -36,7 +54,7 @@ function NavOverlay({ navOverlayOpen, setNavOverlayOpen, category }) {
                 <img src={product.items[0].image1} alt={product.category} className="object-cover" />
               </div>
               <div className="flex items-center gap-3">
-                <h1 className="text-gray-600 text-sm hover:text-[var(--bg-secondary)]">{product.category}</h1>
+                <h1 className="text-gray-600 text-sm hover:text-(--bg-secondary)">{product.category}</h1>
                 <span className="text-xs text-gray-600">( {product.items.length} )</span>
               </div>
             </li>
@@ -48,39 +66,25 @@ function NavOverlay({ navOverlayOpen, setNavOverlayOpen, category }) {
         </ul>
 
         {/* >----------------->Nav-Overlay-Bottom<---------------< */}
-        <div className="overlay-bottom bg-[#eeeff1] text-[#5585b] m-5 text-sm text-gray-600">
+        <div className="overlay-bottom bg-[#eeeff1] m-5 text-sm text-gray-600">
           <div className="content-main p-3">
             <ul className="flex flex-col gap-4 p-4">
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-house"></i> Home</Link>
-              </li>
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-person"></i> Account</Link>
-              </li>
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-envelope"></i> Contact</Link>
-              </li>
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-layout-text-window"></i> Blog</Link>
-              </li>
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-question-circle-fill"></i> FAQ</Link>
-              </li>
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-file-person"></i> About Us</Link>
-              </li>
-              <li className="hover:text-[var(--text-secondary)]">
-                <Link><i className="me-2 bi bi-bug"></i> 404 Page</Link>
-              </li>
+              {navItems.map((item, i) => (
+                <li className="hover:text-(--text-secondary)" key={i}>
+                  <Link to={item.link}>
+                    <i className={`me-2 bi ${item.icon}`}></i> {item.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
             {/* >----------------->Social-Links<---------------< */}
             <div className="social-links border-t border-black/15 p-4 flex flex-row gap-4 text-md text-black/60">
-              <Link className="hover:text-[var(--text-secondary)]"><i className="bi bi-facebook"></i></Link>
-              <Link className="hover:text-[var(--text-secondary)]"><i className="bi bi-instagram"></i></Link>
-              <Link className="hover:text-[var(--text-secondary)]"><i className="bi bi-twitter-x"></i></Link>
-              <Link className="hover:text-[var(--text-secondary)]"><i className="bi bi-youtube"></i></Link>
-              <Link className="hover:text-[var(--text-secondary)]"><i className="bi bi-tiktok"></i></Link>
+              {socialLinks.map((link, i) => (
+                <Link to={link.link} className="hover:text-(--text-secondary)" key={i}>
+                  <i className={`bi ${link.icon}`}></i>
+                </Link>
+              ))}
             </div>
 
           </div>

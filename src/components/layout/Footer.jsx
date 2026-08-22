@@ -171,7 +171,7 @@ function Footer() {
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <di className="items-center gap-3 text-xs">
+                    <div className="items-center gap-3 text-xs">
                       <Link to="/" className="text-gray-600 text-sm hover:text-(--bg-secondary) mb-1">
                         {product.category}
                       </Link>
@@ -179,7 +179,7 @@ function Footer() {
                         <span className="mr-2 text-[#d17175]">${product.discountedPrice}</span>
                         <span className="line-through opacity-80">${product.price}</span>
                       </h4>
-                    </di>
+                    </div>
                   </li>
                 ))}
             </ul>

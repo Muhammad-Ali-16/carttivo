@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import AllProdcuts from "./pages/AllProdcuts";
 import PagesLayout from "./components/layout/PagesLayout";
 import About from "./pages/About";
+import FAQ from "./pages/FAQ";
 
 function App() {
   return (
@@ -42,10 +43,20 @@ function App() {
                 element={
                   <>
                     <PagesLayout title="About Us" />
-                    <About/>
+                    <About />
                   </>
                 }
               />
+              <Route
+                path="/faq"
+                element={
+                  <>
+                    <PagesLayout title="FAQ" />
+                    <FAQ />
+                  </>
+                }
+              />
+
 
             </Route>
           </Routes>

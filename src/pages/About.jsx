@@ -47,7 +47,7 @@ function About() {
   ]
 
   return (
-    <section className='bg-(--bg-primary)'>
+    <section className='about-page bg-(--bg-primary)'>
 
       <PagesSectionLayout>
         <div className="about-content w-full text-md text-black/70 flex flex-col gap-6 items-start justify-start">

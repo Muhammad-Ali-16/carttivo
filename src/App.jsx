@@ -2,16 +2,15 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
-import Navbar from "./components/layout/Navbar";
 import Layout from "./components/layout/Layout";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Home from "./pages/Home";
-import AllProdcuts from "./pages/AllProdcuts";
 import PagesLayout from "./components/layout/PagesLayout";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import TermsConditions from "./pages/TermsConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -63,6 +62,15 @@ function App() {
                   <>
                     <PagesLayout title="Terms & Conditions" />
                     <TermsConditions/>
+                  </>
+                }
+              />
+               <Route
+                path="/privacy-policy"
+                element={
+                  <>
+                    <PagesLayout title="Privacy Policy" />
+                    <PrivacyPolicy/>
                   </>
                 }
               />

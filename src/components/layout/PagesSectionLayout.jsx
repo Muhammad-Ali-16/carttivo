@@ -10,7 +10,7 @@ function PagesSectionLayout({ children }) {
     { text: 'Contact Us', path: '/contact' },
     { text: 'Our Blog', path: '/blog' },
     { text: 'Terms & Conditions', path: '/terms-conditions' },
-    { text: 'Privacy Policy', path: '/' },
+    { text: 'Privacy Policy', path: '/privacy-policy' },
     { text: 'Account', path: '/account' },
   ]
 

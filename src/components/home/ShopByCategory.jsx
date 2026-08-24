@@ -18,7 +18,7 @@ function ShopByCategory() {
 
 
     return (
-        <div className="shop-category-main flex flex-col gap-4 p-8 overflow-x-hidden py-10">
+        <section className="shop-category-main flex flex-col gap-4 p-8 overflow-x-hidden py-10 bg-(--bg-primary)">
             <div className="shop-category-content width-common flex flex-col gap-5 w-full min-w-0">
 
                 {/* >----------------->Section-Heading<---------------< */}
@@ -50,7 +50,7 @@ function ShopByCategory() {
                     </div>
                 )}
             </div>
-        </div>
+        </section>
     )
 }
 

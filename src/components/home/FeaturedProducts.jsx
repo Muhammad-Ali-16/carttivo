@@ -21,7 +21,7 @@ function FeaturedProducts() {
     }, [])
 
     return (
-        <div className="featured-products-main flex flex-col gap-4 p-8 overflow-hidden py-10">
+        <section className="featured-products-main flex flex-col gap-4 p-8 overflow-hidden py-10 bg-(--bg-primary)">
             <div className="featured-products-content width-common flex flex-col justify-center items-center gap-5 w-full min-w-0">
 
                 <SectionTitle title="Featured Products" />
@@ -53,7 +53,7 @@ function FeaturedProducts() {
 
                 <Button path="/" text="See all products"/>
             </div>
-        </div>
+        </section>
     )
 }
 

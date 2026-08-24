@@ -28,7 +28,7 @@ function Home() {
       >
         <div className="absolute inset-0 bg-[rgba(213,218,220,0.8)]" />
         <Blog />
-        <Testimonials/>
+        <Testimonials />
       </section>
     </>
   )

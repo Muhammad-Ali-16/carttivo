@@ -6,12 +6,12 @@ function NavOverlay({ navOverlayOpen, setNavOverlayOpen, category }) {
 
   const navItems = [
     { text: 'Home', link: '/', icon: 'bi-house' },
-    { text: 'Account', link: '/', icon: 'bi-person' },
-    { text: 'Contact', link: '/', icon: 'bi-envelope' },
-    { text: 'Blog', link: '/', icon: 'bi-layout-text-window' },
-    { text: 'FAQ', link: '/', icon: 'bi-question-circle-fill' },
-    { text: 'About us', link: '/', icon: 'bi-file-person' },
-    { text: '404 Page', link: '/', icon: 'bi-bug' },
+    { text: 'Account', link: '/account', icon: 'bi-person' },
+    { text: 'Contact', link: '/contact', icon: 'bi-envelope' },
+    { text: 'Blog', link: '/blog', icon: 'bi-layout-text-window' },
+    { text: 'FAQ', link: '/faq', icon: 'bi-question-circle-fill' },
+    { text: 'About us', link: '/about', icon: 'bi-file-person' },
+    { text: '404 Page', link: '/error-page', icon: 'bi-bug' },
   ]
 
   const socialLinks = [

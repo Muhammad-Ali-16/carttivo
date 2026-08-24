@@ -124,11 +124,22 @@ function Navbar() {
     };
   }, [isHome]);
 
+  const pageLinks = [
+    { text: 'All Products', path: '/all-products' },
+    { text: 'FAQ', path: '/faq' },
+    { text: 'About Us', path: '/about' },
+    { text: 'Contact Us', path: '/contact' },
+    { text: '404 Page', path: '/error-page' },
+    { text: 'Journal Blog', path: '/journal-blog' },
+  ]
+
   const isSolid = isHome ? isScroll : true;
 
   const textColorClass = isSolid
     ? "text-(--text-dark)"
     : "text-(--text-light)";
+
+
 
   return (
     <header className="relative z-10">
@@ -191,24 +202,11 @@ function Navbar() {
               {/* >----------------->Pages-Drop-Down<---------------< */}
               <div className="drop-down-main absolute left-1/2 -translate-x-1/2 top-19 text-[14px] p-3 text-center rounded-sm w-35 bg-(--bg-primary) text-(--text-dark) hidden group-hover:block">
                 <ul className="flex flex-col gap-2">
-                  <li>
-                    <Link className="hover:text-(--text-secondary)">All Products</Link>
-                  </li>
-                  <li>
-                    <Link className="hover:text-(--text-secondary)">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link className="hover:text-(--text-secondary)">About Us</Link>
-                  </li>
-                  <li>
-                    <Link className="hover:text-(--text-secondary)">Contact Us</Link>
-                  </li>
-                  <li>
-                    <Link className="hover:text-(--text-secondary)">404 Page</Link>
-                  </li>
-                  <li>
-                    <Link className="hover:text-(--text-secondary)">Journal Blog</Link>
-                  </li>
+                  {pageLinks.map((link, i) => (
+                    <li key={i}>
+                      <Link className="hover:text-(--text-secondary)" to={link.path}>{link.text}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 

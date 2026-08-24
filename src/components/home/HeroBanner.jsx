@@ -50,7 +50,7 @@ function HeroBanner() {
     ]
     return (
 
-        <section className="hero-banner-main w-full py-10 md:py-20">
+        <section className="hero-banner-main w-full py-10 md:py-20 bg-(--bg-primary)">
             <div className="banner-content width-common grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-4 h-auto md:h-125">
                 {cards.map((card, i) => {
                     const isTall = card.variant === 'tall'

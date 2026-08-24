@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+:root {
+    --bg-secondary: #8e8270;
+    --bg-primary: #f7f7f7;
+    --bg-dark: #1c2021;
+    --bg-dark-2: #282d2f;
+    --bg-drop-down: #eeeff1;
+    --bg-light: #e6e7ea6e;
+    --bg-light-2: #d5dadce6;
+    --text-light-2: #6e7275;
+    --text-light: #f7f7f7;
+    --text-dark: #1c2021;
+    --text-secondary: #8e8270;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Urbanist", sans-serif;
+}
+
+h6 {
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    font-family: "Urbanist", sans-serif;
+}
+
+.font-urbanist {
+    font-family: "Urbanist", sans-serif;
+}
+
+.font-Inter {
+    font-family: "Inter", sans-serif;
+}
+
+.width-common {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 992px) {
+    .width-common {
+        padding: 0 14px;
+    }
+}

@@ -85,7 +85,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom py-12">
+      <section className="footer-bottom py-12 bg-(--bg-primary)">
         <div className="content width-common flex flex-col md:flex-row justify-between items-start flex-wrap gap-12">
 
           <div className="logo flex flex-col justify-start gap-4">
@@ -187,7 +187,7 @@ function Footer() {
           </div>
 
         </div>
-      </div>
+      </section>
     </footer>
   )
 }

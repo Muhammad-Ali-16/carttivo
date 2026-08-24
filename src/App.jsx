@@ -9,6 +9,7 @@ import Wishlist from "./pages/Wishlist";
 import Home from "./pages/Home";
 import AllProdcuts from "./pages/AllProdcuts";
 import PagesLayout from "./components/layout/PagesLayout";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -34,7 +35,16 @@ function App() {
                     <PagesLayout title="Wishlist" />
                     <Wishlist />
                   </>
-                  }
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <>
+                    <PagesLayout title="About Us" />
+                    <About/>
+                  </>
+                }
               />
 
             </Route>

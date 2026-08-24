@@ -11,6 +11,7 @@ import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import BlogPage from "./pages/BlogPage";
 
 function App() {
   return (
@@ -56,21 +57,30 @@ function App() {
                   </>
                 }
               />
-               <Route
+              <Route
                 path="/terms-conditions"
                 element={
                   <>
                     <PagesLayout title="Terms & Conditions" />
-                    <TermsConditions/>
+                    <TermsConditions />
                   </>
                 }
               />
-               <Route
+              <Route
                 path="/privacy-policy"
                 element={
                   <>
                     <PagesLayout title="Privacy Policy" />
-                    <PrivacyPolicy/>
+                    <PrivacyPolicy />
+                  </>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <>
+                    <PagesLayout title="Journal Blog" />
+                    <BlogPage/>
                   </>
                 }
               />

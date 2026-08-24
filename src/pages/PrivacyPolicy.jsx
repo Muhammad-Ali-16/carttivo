@@ -2,7 +2,7 @@ import PagesSectionLayout from '../components/layout/PagesSectionLayout'
 
 function PrivacyPolicy() {
   return (
-    <section className='privacy-policy-main'>
+    <section className='privacy-policy-main bg-(--bg-primary)'>
             <div className="content-main">
                 <PagesSectionLayout>
 

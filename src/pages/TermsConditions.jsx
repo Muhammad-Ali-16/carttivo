@@ -2,7 +2,7 @@ import PagesSectionLayout from '../components/layout/PagesSectionLayout'
 
 function TermsConditions() {
     return (
-        <section className='terms-conditions-main'>
+        <section className='terms-conditions-main bg-(--bg-primary)'>
             <div className="content-main">
                 <PagesSectionLayout>
 

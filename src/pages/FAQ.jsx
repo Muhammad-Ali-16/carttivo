@@ -37,10 +37,10 @@ function FAQ() {
     }
 
     return (
-        <section className='faq-page'>
+        <section className='faq-page bg-(--bg-primary)'>
             <div className="content-main">
 
-                <PagesSectionLayout>
+                <PagesSectionLayout width="full">
 
                     <div className="accordion-main divide-y divide-black/10 space-y-3">
                         {Accordion.map((item, i) => (

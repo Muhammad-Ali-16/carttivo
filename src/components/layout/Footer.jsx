@@ -37,11 +37,11 @@ function Footer() {
       name: 'about-us',
       heading: 'About us',
       links: [
-        { path: "/", text: 'About us' },
-        { path: "/", text: 'Blog' },
-        { path: "/", text: 'FAQ' },
-        { path: "/", text: 'Privacy Policy' },
-        { path: "/", text: 'Terms & Conditions' },
+        { path: "/about", text: 'About us' },
+        { path: "/blog", text: 'Blog' },
+        { path: "/faq", text: 'FAQ' },
+        { path: "/privacy-policy", text: 'Privacy Policy' },
+        { path: "/terms-conditions", text: 'Terms & Conditions' },
       ]
     },
     {

@@ -11,6 +11,7 @@ import AllProdcuts from "./pages/AllProdcuts";
 import PagesLayout from "./components/layout/PagesLayout";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
+import TermsConditions from "./pages/TermsConditions";
 
 function App() {
   return (
@@ -53,6 +54,15 @@ function App() {
                   <>
                     <PagesLayout title="FAQ" />
                     <FAQ />
+                  </>
+                }
+              />
+               <Route
+                path="/terms-conditions"
+                element={
+                  <>
+                    <PagesLayout title="Terms & Conditions" />
+                    <TermsConditions/>
                   </>
                 }
               />

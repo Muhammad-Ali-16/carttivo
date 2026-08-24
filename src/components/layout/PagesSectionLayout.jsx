@@ -9,7 +9,7 @@ function PagesSectionLayout({ children }) {
     { text: 'FAQ', path: '/faq' },
     { text: 'Contact Us', path: '/contact' },
     { text: 'Our Blog', path: '/blog' },
-    { text: 'Terms & Conditions', path: '/' },
+    { text: 'Terms & Conditions', path: '/terms-conditions' },
     { text: 'Privacy Policy', path: '/' },
     { text: 'Account', path: '/account' },
   ]
@@ -17,7 +17,9 @@ function PagesSectionLayout({ children }) {
   return (
     <div className="layout-main max-w-6xl mx-auto px-4 py-10 flex flex-col lg:flex-row justify-between gap-10">
 
-      {children}
+      <div>
+        {children}
+      </div>
 
       <div className="side-bar h-fit sticky top-26 lg:max-w-xs w-full bg-white shadow-md shadow-[#68676726] p-6">
         <h6 className="text-sm font-semibold">Useful Links</h6>

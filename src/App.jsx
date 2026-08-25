@@ -12,6 +12,7 @@ import FAQ from "./pages/FAQ";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogPage from "./pages/BlogPage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -80,13 +81,20 @@ function App() {
                 element={
                   <>
                     <PagesLayout title="Journal Blog" />
-                    <BlogPage/>
+                    <BlogPage />
                   </>
                 }
               />
 
 
+
             </Route>
+            <Route
+              path="/contact"
+              element={
+                <Contact />
+              }
+            />
           </Routes>
         </BrowserRouter>
       </WishlistProvider>

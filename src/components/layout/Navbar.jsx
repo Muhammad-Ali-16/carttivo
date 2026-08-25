@@ -130,7 +130,7 @@ function Navbar() {
     { text: 'About Us', path: '/about' },
     { text: 'Contact Us', path: '/contact' },
     { text: '404 Page', path: '/error-page' },
-    { text: 'Journal Blog', path: '/journal-blog' },
+    { text: 'Journal Blog', path: '/blog' },
   ]
 
   const isSolid = isHome ? isScroll : true;

@@ -15,7 +15,7 @@ function PagesSectionLayout({ children, width }) {
   ]
 
   return (
-      <div className={`${width === 'full' ? "width-common py-10!" : "max-w-6xl mx-auto px-4 py-10"} layout-main flex flex-col lg:flex-row justify-between gap-10`}>
+      <section className={`${width === 'full' ? "width-common py-10!" : "max-w-6xl mx-auto px-4 py-10"} layout-main flex flex-col lg:flex-row justify-between gap-10`}>
 
         <div>
           {children}
@@ -42,7 +42,7 @@ function PagesSectionLayout({ children, width }) {
           </ul>
         </div>
 
-      </div>
+      </section>
   )
 }
 

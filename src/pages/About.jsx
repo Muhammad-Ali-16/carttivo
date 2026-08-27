@@ -99,15 +99,19 @@ function About() {
               <Button text="Buy Carrtivo" path="?" isFilled="filled" />
             </div>
 
-            <div className="cards-main md:col-span-2 grid gird-rows-1 grid-cols-2 md:flex flex-row gap-5 flex-wrap">
+            <div className="cards-main md:col-span-2 grid grid-rows-1 grid-cols-2 md:flex flex-row gap-5 flex-wrap place-items-center">
               {milestonesCards.map((card, i) => (
-                <div key={i} className="card min-w-50 shrink-0 bg-(--bg-primary) border border-black/20 flex justify-center items-center flex-col p-8 gap-1">
-                  <h1 className="font-extrabold text-4xl">{card.number} <span className="text-black/40">{card.span}</span></h1>
-                  <p className="text-black/60 text-sm">{card.heading}</p>
+                <div
+                  key={i}
+                  className="card w-full sm:w-40 lg:w-50 h-30 lg:h-40 text-center shrink-0 bg-(--bg-primary) border border-black/20 flex justify-center items-center flex-col p-8 gap-1"
+                >
+                  <h1 className="font-extrabold text-xl lg:text-3xl">
+                    {card.number} <span className="text-black/40">{card.span}</span>
+                  </h1>
+                  <p className="text-black/60 text-xs lg:text-xm">{card.heading}</p>
                 </div>
               ))}
             </div>
-
           </div>
 
           <div className="flex flex-row justify-center relative py-4">

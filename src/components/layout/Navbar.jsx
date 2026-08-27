@@ -185,7 +185,7 @@ function Navbar() {
           >
 
             <li className="nav-link cursor-pointer py-8 relative group">
-              <Link to="/" className="uppercase">Shop
+              <Link to="/all-products" className="uppercase">Shop
                 <i className="bi bi-caret-down-fill text-[10px] text-black/50 ms-1"></i>
               </Link>
               <i className="bi bi-triangle-fill absolute left-1/2 -translate-x-1/2 top-16 text-(--bg-primary) text-xs z-10 hidden group-hover:block"></i>
@@ -213,7 +213,7 @@ function Navbar() {
             </li>
 
             <li className="nav-link py-8  relative group">
-              <Link to="/" className="uppercase">
+              <Link to="/all-products" className="uppercase">
                 All Products
                 <i className="bi bi-caret-down-fill text-[10px] text-black/50 ms-1"></i>
               </Link>

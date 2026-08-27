@@ -8,6 +8,7 @@ function ProdcutCard({ product, discountedPrice }) {
 
     return (
         <div className="card rounded-sm relative">
+
             {product.discount > 0 && (
                 <div className="discount-badge absolute right-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr-sm flex products-center gap-1 z-5">
                     <i className="bi bi-tag-fill"></i>-{product.discount}%
@@ -32,11 +33,13 @@ function ProdcutCard({ product, discountedPrice }) {
                 <img
                     src={product.image1}
                     alt={product.title}
+                    loading="lazy"
                     className="product-img-1 min-w-full"
                 />
                 <img
                     src={product.image2}
                     alt={product.title}
+                    loading="lazy"
                     className="product-img-2 min-w-full absolute inset-0"
                 />
                 <div className="image-overlay text-sm">

@@ -12,9 +12,9 @@ function Contact() {
     ]
 
     return (
-        <div>
+        <div className='main'>
             <Navbar />
-            <div className="" contact>
+            <div className="contact-page-main bg-(--bg-primary)">
 
                 <div className="map-main relative z-1 ">
 

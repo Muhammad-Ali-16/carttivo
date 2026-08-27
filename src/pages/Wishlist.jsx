@@ -13,7 +13,7 @@ function Wishlist() {
   }
 
   return (
-    <div className="wishlist-main p-4">
+    <section className="wishlist-main p-4 bg-(--bg-primary)">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {wishlist.map((item) => (
           <div
@@ -49,7 +49,7 @@ function Wishlist() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

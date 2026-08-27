@@ -10,7 +10,7 @@ function Cart() {
     )
 
     return (
-        <section className='cart-main flex gap-2 p-4 max-w-7xl'>
+        <section className='cart-main flex gap-2 p-4 max-w-7xl bg-(--bg-primary)'>
         <div className="max-w-5xl w-full overflow-x-auto">
             <table className='w-full border-collapse shadow-sm rounded-lg'>
                 <thead>

@@ -51,7 +51,7 @@ function FeaturedProducts() {
                     </div>
                 )}
 
-                <Button path="/" text="See all products"/>
+                <Button path="/all-products" text="See all products"/>
             </div>
         </section>
     )

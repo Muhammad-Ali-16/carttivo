@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo, Fragment } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { GetAllProducts } from '../services/api'
-import ProductCard from '../components/layout/ProductCard'
+import ProductCard from '../components/ui/ProductCard'
 
 
 function AllProducts() {

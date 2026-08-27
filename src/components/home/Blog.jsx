@@ -1,12 +1,10 @@
 import { Link } from 'react-router'
+import SectionTitle from '../ui/SectionTitle'
 
 import BlogImg1 from '../../assets/blog-img-1.webp'
 import BlogImg2 from '../../assets/blog-img-2.webp'
 import BlogImg3 from '../../assets/blog-img-3.webp'
 import BlogImg4 from '../../assets/blog-img-4.webp'
-
-import SectionTitle from '../layout/SectionTitle'
-
 
 function Blog() {
 

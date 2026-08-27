@@ -1,16 +1,12 @@
-import Button from "../components/layout/Button";
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import PagesSectionLayout from "../components/layout/PagesSectionLayout";
-
+import Button from "../components/ui/Button";
 
 function About() {
-
-
 
   const milestonesCards = [
     { number: '30,000', span: '+', heading: 'Satisfied Customers' },

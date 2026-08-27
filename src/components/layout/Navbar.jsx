@@ -5,7 +5,7 @@ import { useWishlist } from "../../context/WishlistContext";
 import { GetAllProducts } from "../../services/api";
 import CartOverlay from "./CartOverlay";
 import NavOverlay from "./NavOverlay";
-import ProductCardSmall from "./ProductCardSmall";
+import ProductCardSmall from "../ui/ProductCardSmall";
 
 function ShopDropDown() {
 

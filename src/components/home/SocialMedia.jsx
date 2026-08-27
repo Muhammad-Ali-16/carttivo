@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router'
-import SectionTitle from '../layout/SectionTitle'
+import SectionTitle from '../ui/SectionTitle'
 
 import GalleryImg1 from '../../assets/gallery-item-1.webp'
 import GalleryImg2 from '../../assets/gallery-item-2.webp'

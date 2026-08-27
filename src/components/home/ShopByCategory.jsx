@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { useCart } from "../../context/CartContext";
-import { useWishlist } from "../../context/WishlistContext";
 import { GetAllProducts } from "../../services/api";
-import SectionTitle from "../layout/SectionTitle";
+import SectionTitle from "../ui/SectionTitle";
 
 function ShopByCategory() {
     const [category, setCategory] = useState([]);

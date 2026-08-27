@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { GetAllProducts } from '../../services/api'
-import ProductCard from '../../components/layout/ProductCard'
-import SectionTitle from '../layout/SectionTitle'
-import Button from '../layout/Button'
+import ProductCard from '../ui/ProductCard'
+import SectionTitle from '../ui/SectionTitle'
+import Button from '../ui/Button'
 
 function FeaturedProducts() {
 

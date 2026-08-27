@@ -1,11 +1,10 @@
-import BgImg from '../../assets/season-sale-bg.webp'
-import Button from '../layout/Button'
-import SectionTitle from '../layout/SectionTitle'
-
-import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import { GetAllProducts } from "../../services/api";
-import ProductCardSmall from '../layout/ProductCardSmall';
+import ProductCardSmall from '../ui/ProductCardSmall';
+import BgImg from '../../assets/season-sale-bg.webp'
+import Button from '../ui/Button'
+import SectionTitle from '../ui/SectionTitle'
+
 
 function SeasonSale() {
     const [category, setCategory] = useState([]);

@@ -13,7 +13,7 @@ import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogPage from "./pages/BlogPage";
 import Contact from "./pages/Contact";
-import AllProdcuts from "./pages/AllProdcuts";
+import AllProducts from "./pages/AllProducts";
 
 function App() {
   return (
@@ -91,7 +91,7 @@ function App() {
                 element={
                   <>
                     <PagesLayout title="All Products" />
-                    <AllProdcuts/>
+                    <AllProducts/>
                   </>
                 }
               />

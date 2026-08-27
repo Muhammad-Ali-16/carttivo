@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, Fragment } from 'react'
 import { GetAllProducts } from '../services/api'
-import ProductCard from '../components/layout/ProdcutCard'
+import ProductCard from '../components/layout/ProductCard'
 
 
 function AllProducts() {
@@ -221,7 +221,7 @@ function AllProducts() {
                                     {item.title}
                                     <i className={`bi bi-chevron-right transform transition-transform duration-300 ${openIndex === index ? 'rotate-90' : ''}`}></i>
                                 </button>
-                                <div className={`transition-all duration-300 overflow-hidden ${openIndex === index ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                <div className={`transition-all duration-300 overflow-y-auto ${openIndex === index ? 'max-h-70 opacity-100' : 'max-h-0 opacity-0'}`}>
                                     {item.content}
                                 </div>
                             </div>
@@ -265,6 +265,7 @@ function AllProducts() {
                             )
                         })}
                     </div>
+              
                     {visibleProducts.length !== 0 && (
                         <button
                             className="self-center mt-10 px-8 py-2.5 text-sm font-semibold rounded-full border border-(--bg-secondary) text-(--bg-secondary) cursor-pointer transition-colors duration-300 hover:bg-(--bg-secondary) hover:text-white disabled:cursor-not-allowed"
@@ -278,6 +279,7 @@ function AllProducts() {
                     {visibleProducts.length === 0 && (
                         <p className="text-sm text-black/60 mt-6">No products match the selected filters.</p>
                     )}
+                    
                 </div>
 
             </div>

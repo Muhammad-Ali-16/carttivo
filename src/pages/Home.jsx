@@ -1,7 +1,7 @@
 import BgImg from '../assets/blog-bg.webp'
 
 import HeroSection from '../components/home/HeroSection'
-import AllProdcuts from './AllProdcuts'
+import AllProducts from './AllProducts'
 import HeroBanner from '../components/home/HeroBanner'
 import ShopByCategory from '../components/home/ShopByCategory'
 import FeaturedProducts from '../components/home/FeaturedProducts'

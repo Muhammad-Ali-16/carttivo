@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { GetAllProducts } from '../../services/api'
-import ProdcutCard from '../../components/layout/ProdcutCard'
+import ProductCard from '../../components/layout/ProductCard'
 import SectionTitle from '../layout/SectionTitle'
 import Button from '../layout/Button'
 
@@ -44,7 +44,7 @@ function FeaturedProducts() {
                                         ).toFixed(2)
                                         : null;
                                 return (
-                                    <ProdcutCard product={product} discountedPrice={discountedPrice} key={product.id} />
+                                    <ProductCard product={product} discountedPrice={discountedPrice} key={product.id} />
                                 );
                             })
                         }

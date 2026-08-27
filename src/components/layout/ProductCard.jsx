@@ -2,7 +2,7 @@ import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { Link } from "react-router";
 
-function ProdcutCard({ product, discountedPrice }) {
+function ProductCard({ product, discountedPrice }) {
     const { addToCart } = useCart();
     const { toggleWishlist, isInWishlist } = useWishlist();
 
@@ -107,4 +107,4 @@ function ProdcutCard({ product, discountedPrice }) {
     );
 }
 
-export default ProdcutCard;
+export default ProductCard;

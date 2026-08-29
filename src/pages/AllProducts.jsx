@@ -221,6 +221,7 @@ function AllProducts() {
 
                 <div className='section-content flex flex-col'>
 
+
                     <div className="dropdown flex items-center gap-2 mb-5 text-sm">
                         <label htmlFor="showCount" className="text-black/60">Show</label>
                         <select
@@ -234,6 +235,7 @@ function AllProducts() {
                             <option value={18}>18</option>
                         </select>
                     </div>
+
 
                     <div className="cards-main grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                         {visibleProducts.slice(0, showCount).map((product, i) => {
@@ -251,6 +253,7 @@ function AllProducts() {
                         })}
                     </div>
 
+
                     {visibleProducts.length !== 0 && (
                         <button
                             className="self-center mt-10 px-8 py-2.5 text-sm font-semibold rounded-full border border-(--bg-secondary) text-(--bg-secondary) cursor-pointer transition-colors duration-300 hover:bg-(--bg-secondary) hover:text-white disabled:cursor-not-allowed"
@@ -264,6 +267,7 @@ function AllProducts() {
                     {visibleProducts.length === 0 && (
                         <p className="text-sm text-black/60 mt-6">No products match the selected filters.</p>
                     )}
+
 
                 </div>
 

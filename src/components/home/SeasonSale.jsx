@@ -10,7 +10,6 @@ function SeasonSale() {
     const [scroll, setScroll] = useState(0);
     const { category } = useProducts()
 
-
     const saleItems = category
         .flatMap((cat) => cat.items)
         .filter((item) => item.discount)

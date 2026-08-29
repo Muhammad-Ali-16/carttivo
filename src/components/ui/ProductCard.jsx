@@ -1,6 +1,5 @@
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
-import { Link } from "react-router";
 
 function ProductCard({ product, discountedPrice }) {
     const { addToCart } = useCart();

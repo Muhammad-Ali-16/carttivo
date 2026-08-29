@@ -51,7 +51,7 @@ function CartOverlay({ cartOverlayOpen, setCartOverlayOpen }) {
                  ${cartOverlayOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         >
             <div
-                className={`overlay-content-main absolute top-0 right-0 bg-white w-full max-w-[280px] md:max-w-[380px] h-screen flex flex-col justify-between transition-transform duration-200 ease-in-out
+                className={`overlay-content-main absolute top-0 right-0 bg-white w-full max-w-70 md:max-w-95 h-screen flex flex-col justify-between transition-transform duration-200 ease-in-out
                  ${cartOverlayOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 onClick={(e) => e.stopPropagation()}
             >
@@ -69,7 +69,7 @@ function CartOverlay({ cartOverlayOpen, setCartOverlayOpen }) {
                     </div>
 
                     {/* >----------------->Cart-Overlay-Items<---------------< */}
-                    <div className="cart-items overflow-y-scroll justify-self-start w-full max-h-[62vh] [scrollbar-width:none]">
+                    <div className="cart-items overflow-y-scroll justify-self-start w-full max-h-[62vh] scrollbar-none">
                         {cart.length === 0 ?
                             <div className='empty-cart h-[20vh] flex flex-col items-center justify-center gap-3 m-3 bg-[#eeeff1] mt-4 text-black/65'>
                                 <i className="bi bi-cart2 text-3xl"></i>
@@ -112,7 +112,7 @@ function CartOverlay({ cartOverlayOpen, setCartOverlayOpen }) {
                             </Link>
 
                             <Link to='/cart'>
-                                <button type="button" className='order relative w-full py-2 border border-black hover:border-[var(--bg-secondary)] bg-black/88 text-white hover:bg-[var(--bg-secondary)] rounded-full cursor-pointer'>
+                                <button type="button" className='order relative w-full py-2 border border-black hover:border-(--bg-secondary) bg-black/88 text-white hover:bg-(--bg-secondary) rounded-full cursor-pointer'>
                                     Place Order
                                 </button>
                             </Link>

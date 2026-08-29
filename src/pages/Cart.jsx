@@ -29,7 +29,7 @@ function Cart() {
                                     <img
                                         src={item.image1}
                                         alt={item.title}
-                                        className='min-w-[100px] max-h-[100px] object-cover object-top rounded-md'
+                                        className='min-w-25 max-h-25 object-cover object-top rounded-md'
                                     />
                                 </div>
                             </td>

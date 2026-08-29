@@ -1,19 +1,10 @@
 import { useState, useEffect } from "react";
-import { GetAllProducts } from "../../services/api";
+import { useProducts } from "../../hooks/useProducts";
 import SectionTitle from "../ui/SectionTitle";
 
 function ShopByCategory() {
-    const [category, setCategory] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        GetAllProducts()
-            .then((data) => setCategory(data))
-            .catch((err) => setError(err.message))
-            .finally(() => setLoading(false));
-    }, []);
-
+    const { category, loading, error } = useProducts()
 
     return (
         <section className="shop-category-main flex flex-col gap-4 p-8 overflow-x-hidden py-10 bg-(--bg-primary)">

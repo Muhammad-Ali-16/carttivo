@@ -1,26 +1,15 @@
-import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router";
+import { useProducts } from "../../hooks/useProducts";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
-import { GetAllProducts } from "../../services/api";
 import CartOverlay from "./CartOverlay";
 import NavOverlay from "./NavOverlay";
 import ProductCardSmall from "../ui/ProductCardSmall";
 
 function ShopDropDown() {
 
-  const [category, setCategory] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    GetAllProducts()
-      .then((data) => {
-        setCategory(data);
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  }, []);
+  const { category } = useProducts()
 
   return (
 
@@ -85,21 +74,11 @@ function Navbar() {
 
   const isHome = pathname === "/";
 
-  const [category, setCategory] = useState([]);
   const [isScroll, setIsScroll] = useState(false);
   const [cartOverlayOpen, setCartOverlayOpen] = useState(false);
   const [navOverlayOpen, setNavOverlayOpen] = useState(false);
 
-
-  useEffect(() => {
-    GetAllProducts()
-      .then((data) => {
-        setCategory(data);
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  }, []);
+  const { category } = useProducts()
 
   useEffect(() => {
     if (!isHome) return;

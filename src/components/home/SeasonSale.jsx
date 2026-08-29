@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { GetAllProducts } from "../../services/api";
+import { useState } from "react";
+import { useProducts } from "../../hooks/useProducts";
 import ProductCardSmall from '../ui/ProductCardSmall';
 import BgImg from '../../assets/season-sale-bg.webp'
 import Button from '../ui/Button'
@@ -7,15 +7,8 @@ import SectionTitle from '../ui/SectionTitle'
 
 
 function SeasonSale() {
-    const [category, setCategory] = useState([]);
-    const [error, setError] = useState(null);
     const [scroll, setScroll] = useState(0);
-
-    useEffect(() => {
-        GetAllProducts()
-            .then((data) => setCategory(data))
-            .catch((err) => setError(err.message));
-    }, []);
+    const { category } = useProducts()
 
     const saleItems = category
         .flatMap((cat) => cat.items)

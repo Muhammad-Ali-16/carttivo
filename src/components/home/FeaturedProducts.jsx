@@ -1,25 +1,12 @@
-import { useState, useEffect } from 'react'
-import { GetAllProducts } from '../../services/api'
+import { useProducts } from '../../hooks/useProducts'
 import ProductCard from '../ui/ProductCard'
 import SectionTitle from '../ui/SectionTitle'
 import Button from '../ui/Button'
 
 function FeaturedProducts() {
 
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-    const [category, setCategory] = useState([])
-
-    useEffect(() => {
-
-        GetAllProducts()
-            .then((data) => {
-                setCategory(data)
-            })
-            .catch((err) => { setError(err.message) })
-            .finally(() => { setLoading(false) })
-    }, [])
-
+    const {category, loading, error} = useProducts()
+  
     return (
         <section className="featured-products-main flex flex-col gap-4 p-8 overflow-hidden py-10 bg-(--bg-primary)">
             <div className="featured-products-content width-common flex flex-col justify-center items-center gap-5 w-full min-w-0">

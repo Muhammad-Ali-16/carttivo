@@ -4,8 +4,8 @@ import { useWishlist } from "../../context/WishlistContext";
 
 function ProductCardSmall({ item, number, discountedPrice }) {
 
-    const { cart, addToCart } = useCart();
-    const { wishlist, toggleWishlist, isInWishlist } = useWishlist();
+    const { addToCart } = useCart();
+    const { toggleWishlist, isInWishlist } = useWishlist();
 
     return (
         <>

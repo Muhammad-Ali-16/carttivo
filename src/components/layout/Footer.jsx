@@ -1,21 +1,9 @@
-import { useState, useEffect } from "react";
-import { GetAllProducts } from "../../services/api";
+import { useProducts } from '../../context/ProductsContext'
 import { Link } from 'react-router'
 
 function Footer() {
 
-  const [category, setCategory] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    GetAllProducts()
-      .then((data) => {
-        setCategory(data);
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  }, []);
+  const { category } = useProducts()
 
   const footerTopCards = [
     { heading: 'Fast Shipping', icon: 'bi-truck' },

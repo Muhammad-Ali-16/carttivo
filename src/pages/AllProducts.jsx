@@ -1,13 +1,9 @@
-import { useState, useEffect, useMemo } from 'react'
-import { GetAllProducts } from '../services/api'
+import { useState,  useMemo } from 'react'
 import ProductCard from '../components/ui/ProductCard'
-
+import { useProducts } from '../context/ProductsContext'
 
 function AllProducts() {
 
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-    const [category, setCategory] = useState([])
     const [filterMinPrice, setFilterMinPrice] = useState(0)
     const [filterMaxPrice, setFilterMaxPrice] = useState(999)
     const [isInStock, setIsInStock] = useState(null)
@@ -15,6 +11,8 @@ function AllProducts() {
     const [filteredCategory, setFilteredCategory] = useState('')
     const [filteredBrand, setFilteredBrand] = useState('')
     const [showCount, setShowCount] = useState(6)
+
+    const { category } = useProducts()
 
     const allProducts = useMemo(() => {
         return category.flatMap((cat) => cat.items)
@@ -68,16 +66,6 @@ function AllProducts() {
     const handleStockFilter = (value) => {
         setIsInStock((prev) => (prev === value ? null : value))
     }
-
-    useEffect(() => {
-        GetAllProducts()
-            .then((data) => {
-                setCategory(data)
-            })
-            .catch((err) => { setError(err.message) })
-            .finally(() => { setLoading(false) })
-    }, [])
-
 
     const accordionItems = [
         {
@@ -196,15 +184,12 @@ function AllProducts() {
         }
     ]
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>{error}</p>
-
     return (
         <section className='prodcuts-main w-full pt-25 bg-(--bg-primary)'>
             <div className=" layout-main width-common py-10! flex flex-col lg:flex-row justify-between gap-10">
 
                 <div className="side-bar h-fit lg:sticky top-26 lg:max-w-xs w-full bg-white shadow-md shadow-[#68676726] p-6">
-                
+
                     <div className="sider-bar-top flex justify-between flex-row">
                         <h6 className="text-sm font-semibold mb-3">Filter</h6>
                         <button className="text-sm text-red-600 cursor-pointer font-semibold mb-3" onClick={() => resetFilter()}>Reset</button>
@@ -213,7 +198,7 @@ function AllProducts() {
                     <div className="accordion-main divide-y divide-black/10 space-y-3">
 
                         {accordionItems.map((item, index) => (
-                            <div className="accordion-item">
+                            <div className="accordion-item" key={index}>
                                 <button
                                     className="flex justify-between flex-row cursor-pointer items-center w-full font-semibold text-sm text-black/50 py-3"
                                     onClick={() => toggleAccordion(index)}
@@ -235,7 +220,7 @@ function AllProducts() {
                 </div>
 
                 <div className='section-content flex flex-col'>
-               
+
                     <div className="dropdown flex items-center gap-2 mb-5 text-sm">
                         <label htmlFor="showCount" className="text-black/60">Show</label>
                         <select
@@ -249,7 +234,7 @@ function AllProducts() {
                             <option value={18}>18</option>
                         </select>
                     </div>
-                   
+
                     <div className="cards-main grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                         {visibleProducts.slice(0, showCount).map((product, i) => {
                             const discountedPrice =
@@ -265,7 +250,7 @@ function AllProducts() {
                             )
                         })}
                     </div>
-              
+
                     {visibleProducts.length !== 0 && (
                         <button
                             className="self-center mt-10 px-8 py-2.5 text-sm font-semibold rounded-full border border-(--bg-secondary) text-(--bg-secondary) cursor-pointer transition-colors duration-300 hover:bg-(--bg-secondary) hover:text-white disabled:cursor-not-allowed"
@@ -279,7 +264,7 @@ function AllProducts() {
                     {visibleProducts.length === 0 && (
                         <p className="text-sm text-black/60 mt-6">No products match the selected filters.</p>
                     )}
-                    
+
                 </div>
 
             </div>

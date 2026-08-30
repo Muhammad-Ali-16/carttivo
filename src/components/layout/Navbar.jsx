@@ -130,7 +130,6 @@ function Navbar() {
       <NavOverlay
         navOverlayOpen={navOverlayOpen}
         setNavOverlayOpen={setNavOverlayOpen}
-        category={category}
       />
       {/* >----------------->NavBar<---------------< */}
       <nav
@@ -150,11 +149,13 @@ function Navbar() {
             >
               <i className="bi bi-text-left"></i>
             </button>
-            <img
-              src={`${isSolid ? "/logo.png" : "/logo-scroll.png"}`}
-              alt="logo"
-              className="lg:w-40 w-28"
-            />
+            <Link to="/">
+              <img
+                src={`${isSolid ? "/logo.png" : "/logo-scroll.png"}`}
+                alt="logo"
+                className="lg:w-40 w-28"
+              />
+            </Link>
           </div>
 
           {/* >----------------->Nav-Links<---------------< */}

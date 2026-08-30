@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
+import { useProducts } from '../../context/ProductsContext'
 
-function NavOverlay({ navOverlayOpen, setNavOverlayOpen, category }) {
+function NavOverlay({ navOverlayOpen, setNavOverlayOpen }) {
+
+  const { category} = useProducts()
   const [limit, setLimit] = useState(5)
 
   const navItems = [

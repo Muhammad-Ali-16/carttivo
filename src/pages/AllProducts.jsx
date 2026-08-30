@@ -185,7 +185,7 @@ function AllProducts() {
     ]
 
     return (
-        <section className='prodcuts-main w-full pt-25 bg-(--bg-primary) p-8 md:p-0'>
+        <section className='prodcuts-main w-full pt-12 md:pt-25 bg-(--bg-primary)'>
             <div className=" layout-main width-common py-10! flex flex-col lg:flex-row justify-between gap-10">
 
                 <div className="side-bar h-fit lg:sticky top-26 lg:max-w-xs w-full bg-white shadow-md shadow-[#68676726] p-6">

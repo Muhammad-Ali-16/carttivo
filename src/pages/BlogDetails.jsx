@@ -188,9 +188,9 @@ function BlogDetails() {
                 Leave A Comment
               </h1>
 
-              <form className='flex flex-col gap-6'>
+              <form className='flex flex-col sm:gap-6 gap-3'>
 
-                <div className="flex flex-row gap-6 w-full items-center">
+                <div className="flex flex-col sm:flex-row sm:gap-6 gap-3 w-full sm:items-center">
                   <label htmlFor="Name" className="text-sm text-black/60 font-semibold shrink-0 w-28">
                     Name<span className="text-red-600 text-xl">*</span>
                   </label>
@@ -203,7 +203,7 @@ function BlogDetails() {
                   />
                 </div>
 
-                <div className="flex flex-row gap-6 w-full items-center">
+                <div className="flex flex-col sm:flex-row sm:gap-6 gap-3 w-full sm:items-center">
                   <label htmlFor="email" className="text-sm text-black/60 font-semibold shrink-0 w-28">
                     Email<span className="text-red-600 text-xl">*</span>
                   </label>
@@ -216,7 +216,7 @@ function BlogDetails() {
                   />
                 </div>
 
-                <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex flex-col sm:flex-row sm:gap-6 gap-3 w-full items-start">
                   <label htmlFor="comment" className="text-sm text-black/60 font-semibold shrink-0 w-28 pt-2">
                     Comment<span className="text-red-600 text-xl">*</span>
                   </label>

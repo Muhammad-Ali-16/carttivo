@@ -185,7 +185,7 @@ function AllProducts() {
     ]
 
     return (
-        <section className='prodcuts-main w-full pt-25 bg-(--bg-primary)'>
+        <section className='prodcuts-main w-full pt-25 bg-(--bg-primary) p-8 md:p-0'>
             <div className=" layout-main width-common py-10! flex flex-col lg:flex-row justify-between gap-10">
 
                 <div className="side-bar h-fit lg:sticky top-26 lg:max-w-xs w-full bg-white shadow-md shadow-[#68676726] p-6">
@@ -219,8 +219,7 @@ function AllProducts() {
                     )}
                 </div>
 
-                <div className='section-content flex flex-col'>
-
+                <div className='section-content flex flex-col px-6'>
 
                     <div className="dropdown flex items-center gap-2 mb-5 text-sm">
                         <label htmlFor="showCount" className="text-black/60">Show</label>
@@ -236,8 +235,7 @@ function AllProducts() {
                         </select>
                     </div>
 
-
-                    <div className="cards-main grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                    <div className="card-main grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                         {visibleProducts.slice(0, showCount).map((product, i) => {
                             const discountedPrice =
                                 product.discount > 0

@@ -15,17 +15,10 @@ function ProductCard({ product, discountedPrice }) {
             )}
 
             <div className="card-image-main flex gap-5 relative overflow-hidden cursor-pointer rounded-t-sm">
-                {product.inStock ? (
-                    <>
-                        {product.stock < 5 ? (
-                            <div className="image-label-main py-1 w-full text-center bg-[#ffebeb] text-[#d17175] text-[12px] md:text-sm border-y border-black/20">
-                                Limited Stock
-                            </div>
-                        ) : null}
-                    </>
-                ) : (
-                    <div className="image-label-main py-1 w-full text-center bg-[#ffebeb] text-[#d17175] text-text-[12px] md:text-sm border-y border-black/20">
-                        Out Of Stock
+
+                {(!product.inStock || product.stock < 5) && (
+                    <div className="image-label-main absolute top-0 left-0 w-full text-center py-1 px-2 bg-[#ffebeb] text-[#d17175] text-xs md:text-sm border-y border-black/20 z-10">
+                        {product.inStock ? "Limited Stock" : "Out Of Stock"}
                     </div>
                 )}
 

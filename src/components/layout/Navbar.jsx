@@ -6,10 +6,15 @@ import { useWishlist } from "../../context/WishlistContext";
 import CartOverlay from "./CartOverlay";
 import NavOverlay from "./NavOverlay";
 import ProductCardSmall from "../ui/ProductCardSmall";
+import { useCategoryFilter } from "../../context/CategoryFilterContext";
 
 function ShopDropDown() {
 
   const { category } = useProducts()
+  const { setFilteredcategory } = useCategoryFilter()
+
+  const slugify = (str) =>
+    str.toLowerCase().trim().replace(/\s+/g, '-');
 
   return (
 
@@ -27,7 +32,11 @@ function ShopDropDown() {
                   className="object-cover group-hover/img:scale-110 transition-all duration-150"
                 />
               </div>
-              <h1 className="text-center pt-2 pb-1">{cat.category}</h1>
+              <Link to={`/shop-by-category/${slugify(cat.category)}`} onClick={() => { setFilteredcategory(cat) }}>
+                <h1 className="text-center pt-2 pb-1">
+                  {cat.category}
+                </h1>
+              </Link>
               <h6 className="text-center text-xs text-black/60">
                 {cat.items.length} Product(s)
               </h6>
@@ -72,6 +81,11 @@ function Navbar() {
   const { cart } = useCart();
   const { wishlist } = useWishlist();
   const { pathname } = useLocation();
+  const { setFilteredcategory } = useCategoryFilter()
+
+  const slugify = (str) =>
+    str.toLowerCase().trim().replace(/\s+/g, '-');
+
 
   const isHome = pathname === "/";
 
@@ -206,7 +220,11 @@ function Navbar() {
                     <div className="img w-10 h-10 overflow-hidden rounded-full border border-black/20">
                       <img src={product.items[0].image1} alt={product.category} className="object-cover" />
                     </div>
-                    <h1 className="text-gray-600 hover:text-(--bg-secondary)">{product.category}</h1>
+                    <Link to={`/shop-by-category/${slugify(product.category)}`} onClick={() => { setFilteredcategory(product) }}>
+                      <h1 className="text-gray-600 hover:text-(--bg-secondary)">
+                        {product.category}
+                      </h1>
+                    </Link>
                   </div>
                 ))}
               </div>

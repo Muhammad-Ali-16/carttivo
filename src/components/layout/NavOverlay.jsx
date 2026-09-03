@@ -1,11 +1,18 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useProducts } from '../../context/ProductsContext'
+import { useCategoryFilter } from "../../context/CategoryFilterContext";
+
 
 function NavOverlay({ navOverlayOpen, setNavOverlayOpen }) {
 
-  const { category} = useProducts()
+  const { category } = useProducts()
   const [limit, setLimit] = useState(5)
+  const { setFilteredcategory } = useCategoryFilter()
+
+  const slugify = (str) =>
+    str.toLowerCase().trim().replace(/\s+/g, '-');
+
 
   const navItems = [
     { text: 'Home', link: '/', icon: 'bi-house' },
@@ -57,14 +64,19 @@ function NavOverlay({ navOverlayOpen, setNavOverlayOpen }) {
                 <img src={product.items[0].image1} alt={product.category} className="object-cover" />
               </div>
               <div className="flex items-center gap-3">
-                <h1 className="text-gray-600 text-sm hover:text-(--bg-secondary)">{product.category}</h1>
+                <Link to={`/shop-by-category/${slugify(product.category)}`} onClick={() => { setFilteredcategory(product), setNavOverlayOpen(false) }}>
+                  <h1 className="text-gray-600 text-sm hover:text-(--bg-secondary)">
+                    {product.category}
+                  </h1>
+                </Link>
                 <span className="text-xs text-gray-600">( {product.items.length} )</span>
               </div>
             </li>
           ))}
           <button
-            onClick={() => { setLimit(limit + 5) }}
-            className={`text-sm ${limit > category.length ? 'cursor-not-allowed select-none opacity-70' : 'cursor-pointer opacity-100'}`}
+            onClick={() => { setLimit(category.length) }}
+            disabled={limit === category.length}
+            className={`text-sm disabled:cursor-not-allowed disabled:select-none disabled:opacity-70 cursor-pointer opacity-100`}
           >Show more...</button>
         </ul>
 

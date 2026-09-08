@@ -1,9 +1,15 @@
 import { useCart } from "../../context/CartContext";
+import { Link } from "react-router";
 import { useWishlist } from "../../context/WishlistContext";
+import { useProductDetails } from "../../context/ProductDetailsContext";
 
 function ProductCard({ product, discountedPrice }) {
     const { addToCart } = useCart();
     const { toggleWishlist, isInWishlist } = useWishlist();
+    const { setSelectedProduct } = useProductDetails()
+
+const slugify = (str) =>
+    str.toLowerCase().trim().replace(/\s+/g, '-');
 
     return (
         <div className="card rounded-sm relative">
@@ -77,9 +83,11 @@ function ProductCard({ product, discountedPrice }) {
             </div>
             {/* >----------------->Card-Discription<---------------< */}
             <div className="card-discription flex items-center justify-center flex-col py-3 gap-1">
+
                 <h4 className="product-title font-semibold transition-all duration-100 text-lg hover:underline hover:text(--text-secondary)">
-                    <a href="?">{product.title}</a>
+                    <Link to={`/product-details/${slugify(product.title)}`} onClick={() => { setSelectedProduct(product) }}>{product.title}</Link>
                 </h4>
+
                 <div className="product-price text-(--text-light-2) text-sm font-semibold">
                     {discountedPrice ? (
                         <h4>

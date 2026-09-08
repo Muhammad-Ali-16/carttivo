@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import ProductCard from '../components/ui/ProductCard'
 import { useCategoryFilter } from '../context/CategoryFilterContext'
-
 import { useProducts } from "../context/ProductsContext";
 import ProductCardSmall from '../components/ui/ProductCardSmall';
 
@@ -210,53 +209,52 @@ function FillteredCategory() {
 
                 <div className='section-content flex flex-col px-6 overflow-hidden'>
 
-                    <div className="card-main py-8 min-w-0 ">
-                        <div className="relative">
+                    {/* >----------------->Suggested-Cards<---------------< */}
+                    <div className="suggested-cards-main py-8 min-w-0 ">
 
-                            <div className="overflow-hidden px-6 py-8 border-3 border-(--bg-secondary) relative">
+                        <div className="overflow-hidden px-6 py-8 border-3 border-(--bg-secondary) relative">
 
-                                <div className="flex flex-row gap-6 pb-5 text-sm">
-                                    <h6
-                                        onClick={() => setSuggestedCards('discount')}
-                                        className={`cursor-pointer ${suggestedCards === 'discount' ? 'font-semibold text-black/80 underline' : 'text-gray-400'
-                                            }`}
-                                    >
-                                        Discounted
-                                    </h6>
-                                    <h6
-                                        onClick={() => setSuggestedCards('featured')}
-                                        className={`cursor-pointer ${suggestedCards === 'featured' ? 'font-semibold text-black/80 underline' : 'text-gray-400'
-                                            }`}
-                                    >
-                                        Featured
-                                    </h6>
-                                </div>
+                            <div className="btns-main flex flex-row gap-6 pb-5 text-sm">
+                                <button
+                                    onClick={() => setSuggestedCards('discount')}
+                                    className={`cursor-pointer ${suggestedCards === 'discount' ? 'font-semibold text-black/80 underline' : 'text-gray-400'
+                                        }`}
+                                >
+                                    Discounted
+                                </button>
+                                <button
+                                    onClick={() => setSuggestedCards('featured')}
+                                    className={`cursor-pointer ${suggestedCards === 'featured' ? 'font-semibold text-black/80 underline' : 'text-gray-400'
+                                        }`}
+                                >
+                                    Featured
+                                </button>
+                            </div>
 
-                                <div className="flex flex-row gap-7 overflow-x-auto scrollbar-none relative">
-                                    {/* >----------------->Cards<---------------< */}
-                                    {featuredCards.map((item, i) => {
-                                        const discountedPrice =
-                                            item.discount > 0
-                                                ? (item.price - (item.price * item.discount) / 100).toFixed(2)
-                                                : null;
+                            <div className="cards flex flex-row gap-7 overflow-x-auto scrollbar-none relative">
+                                {/* >----------------->Cards<---------------< */}
+                                {featuredCards.map((item, i) => {
+                                    const discountedPrice =
+                                        item.discount > 0
+                                            ? (item.price - (item.price * item.discount) / 100).toFixed(2)
+                                            : null;
 
-                                        return (
-                                            <div
-                                                className="card bg-(--bg-primary) cursor-pointer border text-xs border-black/20 flex flex-row items-center justify-between p-2 gap-3 min-w-70 shrink-0"
-                                                key={i}
-                                            >
-                                                <ProductCardSmall item={item} discountedPrice={discountedPrice} number={i + 1} />
-                                            </div>
-                                        );
-                                    })}
+                                    return (
+                                        <div
+                                            className="card bg-(--bg-primary) cursor-pointer border text-xs border-black/20 flex flex-row items-center justify-between p-2 gap-3 min-w-70 shrink-0"
+                                            key={i}
+                                        >
+                                            <ProductCardSmall item={item} discountedPrice={discountedPrice} number={i + 1} />
+                                        </div>
+                                    );
+                                })}
 
-                                    <div className="pointer-events-none absolute left-0 top-0 h-full w-28 bg-linear-to-r from-white/90 to-transparent" />
+                                <div className="pointer-events-none absolute left-0 top-0 h-full w-28 bg-linear-to-r from-white/90 to-transparent" />
 
-                                    <div className="pointer-events-none absolute right-0 top-0 h-full w-28 bg-linear-to-l from-white/90 to-transparent" />
-
-                                </div>
+                                <div className="pointer-events-none absolute right-0 top-0 h-full w-28 bg-linear-to-l from-white/90 to-transparent" />
 
                             </div>
+
                         </div>
                     </div>
 

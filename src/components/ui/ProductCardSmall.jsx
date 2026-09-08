@@ -1,4 +1,6 @@
+import { Link } from "react-router";
 import { useCart } from "../../context/CartContext";
+import { useProductDetails } from "../../context/ProductDetailsContext";
 import { useWishlist } from "../../context/WishlistContext";
 
 
@@ -6,6 +8,10 @@ function ProductCardSmall({ item, number, discountedPrice }) {
 
     const { addToCart } = useCart();
     const { toggleWishlist, isInWishlist } = useWishlist();
+    const { setSelectedProduct } = useProductDetails()
+
+ const slugify = (str) =>
+    str.toLowerCase().trim().replace(/\s+/g, '-');
 
     return (
         <>
@@ -17,7 +23,11 @@ function ProductCardSmall({ item, number, discountedPrice }) {
                 />
                 {/* >----------------->Card-Discription<---------------< */}
                 <div className="discription">
-                    <h1 className="text-black/50 font-semibold text-xs"> {item.title}</h1>
+                    <h1 className="text-black/50 font-semibold text-xs">
+                        <Link to={`/product-details/${slugify(item.title)}`} onClick={() => { setSelectedProduct(item) }}>
+                            {item.title}
+                        </Link>
+                    </h1>
                     {discountedPrice ? (
                         <div className="flex flex-row gap-2 justify-center items-center">
                             <span className=" text-black/70">

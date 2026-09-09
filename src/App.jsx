@@ -22,6 +22,7 @@ import { CategoryFilterProvider } from "./context/CategoryFilterContext";
 import ShopByCategoryRoute from "./utils/ShopByCategoryRoute";
 import ProductDetailsRoute from "./utils/ProductDetailsRoute";
 import { ProductDetailsProvider } from "./context/ProductDetailsContext";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
 
@@ -106,6 +107,14 @@ function App() {
                           <>
                             <PagesLayout title="All Products" />
                             <AllProducts />
+                          </>
+                        }
+                      />
+                      <Route
+                        path="/error-page"
+                        element={
+                          <>
+                            <ErrorPage/>
                           </>
                         }
                       />

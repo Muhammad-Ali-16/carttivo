@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { GetAllProducts } from '../services/api'
+import LoadingPage from '../components/ui/LoadingPage'
 
 
 const ProductsContext = createContext(null)
@@ -20,7 +21,7 @@ export function ProductsProvider({ children }) {
             .finally(() => { setLoading(false) })
     }, [])
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <LoadingPage isLoading={loading}/>
     if (error) return <p>{error}</p>
 
     return (

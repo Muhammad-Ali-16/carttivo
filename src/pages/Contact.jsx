@@ -31,6 +31,7 @@ function Contact() {
                         </ul>
                     </div>
 
+                    {/* >----------------->Map<---------------< */}
                     <div className="map w-full h-75 md:h-113 overflow-hidden">
                         <iframe
                             className=' grayscale-100 opacity-90 contrast-105 transition-all duration-150 hover:contrast-100 hover:opacity-100 hover:grayscale-0'
@@ -63,6 +64,7 @@ function Contact() {
                             ))}
                         </div>
 
+                        {/* >----------------->Contect-Form<---------------< */}
                         <div className="contact-form lg:col-span-2 bg-[#e1e2e5]">
                             <div className="p-8">
                                 <h1 className="title text-2xl font-semibold text-(--text-dark)">

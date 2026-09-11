@@ -36,18 +36,18 @@ function Footer() {
       name: 'my-account',
       heading: 'My Account',
       links: [
-        { path: "/", text: 'Login' },
-        { path: "/", text: 'Order History' },
+        { path: "/account", text: 'Login' },
+        { path: "/account", text: 'Order History' },
       ]
     },
     {
       name: 'customer-services',
       heading: 'Customer Services',
       links: [
-        { path: "/", text: 'Contact Us' },
-        { path: "/", text: 'Store Location' },
-        { path: "/", text: 'Our Brands' },
-        { path: "/", text: 'Delivery Information' },
+        { path: "/contact", text: 'Contact Us' },
+        { path: "/contact", text: 'Store Location' },
+        { path: "/all-products", text: 'Our Brands' },
+        { path: "/terms-conditions", text: 'Delivery Information' },
       ]
     },
   ]

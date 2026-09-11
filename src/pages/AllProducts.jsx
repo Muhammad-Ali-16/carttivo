@@ -1,4 +1,4 @@
-import { useState,  useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import ProductCard from '../components/ui/ProductCard'
 import { useProducts } from '../context/ProductsContext'
 
@@ -188,6 +188,7 @@ function AllProducts() {
         <section className='prodcuts-main w-full pt-12 md:pt-25 bg-(--bg-primary)'>
             <div className=" layout-main width-common py-10! flex flex-col lg:flex-row justify-between gap-10">
 
+                {/* >----------------->Side-Filter-Bar<---------------< */}
                 <div className="side-bar h-fit lg:sticky top-26 lg:max-w-xs w-full bg-white shadow-md shadow-[#68676726] p-6">
 
                     <div className="sider-bar-top flex justify-between flex-row">
@@ -235,6 +236,7 @@ function AllProducts() {
                         </select>
                     </div>
 
+                    {/* >----------------->Cards<---------------< */}
                     <div className="card-main grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                         {visibleProducts.slice(0, showCount).map((product, i) => {
                             const discountedPrice =

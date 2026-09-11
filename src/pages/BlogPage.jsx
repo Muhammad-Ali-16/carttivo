@@ -38,14 +38,14 @@ function BlogPage() {
                   <span className="flex items-center gap-1.5">
                     <i className="bi bi-person"></i> {post.author}
                   </span>
-                    <span className="flex items-center gap-1.5">
-                      <i className="bi bi-chat"></i> {post.comments.length}
-                    </span>
+                  <span className="flex items-center gap-1.5">
+                    <i className="bi bi-chat"></i> {post.comments.length}
+                  </span>
                   <span className="flex items-center gap-1.5">
                     <i className="bi bi-eye"></i> {post.views}
                   </span>
                 </div>
-
+                {/* >----------------->Heading<---------------< */}
                 <h3 className="card-heading text-md md:text-xl font-semibold leading-snug text-black">
                   <Link
                     to={`/blog/${post.link}`}
@@ -54,11 +54,11 @@ function BlogPage() {
                     {post.title}
                   </Link>
                 </h3>
-
+                {/* >----------------->Description<---------------< */}
                 <p className="card-description text-sm text-black/60 line-clamp-2">
                   {post.description}
                 </p>
-
+                {/* >----------------->Button<---------------< */}
                 <Link
                   to={`/blog/${post.link}`}
                   className="card-btn text-sm font-medium underline underline-offset-4 w-fit flex items-center gap-1 hover:text-(--text-secondary) transition-colors duration-200"

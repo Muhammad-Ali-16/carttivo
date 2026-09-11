@@ -4,6 +4,8 @@ import { ProductsProvider } from "./context/ProductsContext";
 import { BlogProvider } from "./context/BlogContext";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
+import { CategoryFilterProvider } from "./context/CategoryFilterContext";
+import { ProductDetailsProvider } from "./context/ProductDetailsContext";
 import ScrollToTop from "./utils/ScrollToTop"
 import Layout from "./components/layout/Layout";
 import Cart from "./pages/Cart";
@@ -20,10 +22,8 @@ import BlogPage from "./pages/BlogPage";
 import Contact from "./pages/Contact";
 import AllProducts from "./pages/AllProducts";
 import BlogDetails from "./pages/BlogDetails";
-import { CategoryFilterProvider } from "./context/CategoryFilterContext";
 import ShopByCategoryRoute from "./utils/ShopByCategoryRoute";
 import ProductDetailsRoute from "./utils/ProductDetailsRoute";
-import { ProductDetailsProvider } from "./context/ProductDetailsContext";
 import ErrorPage from "./pages/ErrorPage";
 
 function App() {
@@ -134,7 +134,7 @@ function App() {
                         path="/error-page"
                         element={
                           <>
-                            <ErrorPage/>
+                            <ErrorPage />
                           </>
                         }
                       />

@@ -85,6 +85,7 @@ function About() {
       <div className="about-cards bg-[#e6e7ea]">
         <div className="content width-common">
 
+          {/* >----------------->Milestones<---------------< */}
           <div className="milestones py-12 grid grid-rows-1 grid-cols-1 md:grid-cols-3 gap-6">
 
             <div className="flex flex-col gap-4 justify-center items-start">
@@ -95,6 +96,7 @@ function About() {
               <Button text="Buy Carrtivo" path="?" isFilled="filled" />
             </div>
 
+            {/* >----------------->Milestones-Cards<---------------< */}
             <div className="cards-main md:col-span-2 grid grid-rows-1 grid-cols-2 md:flex flex-row gap-5 flex-wrap place-items-center">
               {milestonesCards.map((card, i) => (
                 <div
@@ -119,6 +121,7 @@ function About() {
             <div className="h-2.5 w-2.5 rotate-45 border border-black/70"></div>
           </div>
 
+          {/* >----------------->Testimonials-Cards<---------------< */}
           <div className="testimonials-cards relative py-14">
 
             <Swiper
@@ -160,6 +163,7 @@ function About() {
 
             </Swiper>
 
+            {/* >----------------->Prev-Btn<---------------< */}
             <button
               className="testimonial-prev cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 flex items-center justify-center rounded-full border border-gray-400 text-gray-600 bg-gray-100 transition"
               aria-label="Previous testimonial"
@@ -167,6 +171,7 @@ function About() {
               <i className="bi bi-chevron-left"></i>
             </button>
 
+            {/* >----------------->Next-Btn<---------------< */}
             <button
               className="testimonial-next cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 flex items-center justify-center rounded-full border border-gray-400 text-gray-600 bg-gray-100 transition"
               aria-label="Next testimonial"

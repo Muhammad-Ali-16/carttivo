@@ -106,12 +106,15 @@ function CartOverlay({ cartOverlayOpen, setCartOverlayOpen }) {
                         {/* >----------------->Cart-Buttons<---------------< */}
                         <div className="btn-main bg-[#eeeff1] p-4 gap-4 flex flex-col text-sm">
                             <Link to="/cart">
-                                <button type="button" className='view-cart relative w-full py-2 border border-black text-black/70 bg-white hover:bg-transparent hover:text-black rounded-full cursor-pointer'>
+                                <button 
+                                type="button" 
+                                onClick={()=>{setCartOverlayOpen(false)}}
+                                className='view-cart relative w-full py-2 border border-black text-black/70 bg-white hover:bg-transparent hover:text-black rounded-full cursor-pointer'>
                                     View Cart
                                 </button>
                             </Link>
 
-                            <Link to='/cart'>
+                            <Link to='/checkout'>
                                 <button type="button" className='order relative w-full py-2 border border-black hover:border-(--bg-secondary) bg-black/88 text-white hover:bg-(--bg-secondary) rounded-full cursor-pointer'>
                                     Place Order
                                 </button>

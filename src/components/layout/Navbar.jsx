@@ -250,7 +250,7 @@ function Navbar() {
 
             {/* >----------------->Account<---------------< */}
             <button className="account-btn">
-              <Link to="/">
+              <Link to="/account">
                 <i className="bi bi-person text-md lg:text-xl"></i>
               </Link>
             </button>

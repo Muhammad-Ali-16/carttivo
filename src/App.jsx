@@ -7,6 +7,8 @@ import { WishlistProvider } from "./context/WishlistContext";
 import ScrollToTop from "./utils/ScrollToTop"
 import Layout from "./components/layout/Layout";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Account from "./pages/Account";
 import Wishlist from "./pages/Wishlist";
 import Home from "./pages/Home";
 import PagesLayout from "./components/layout/PagesLayout";
@@ -44,6 +46,24 @@ function App() {
                           <>
                             <PagesLayout title="Cart" />
                             <Cart />
+                          </>
+                        }
+                      />
+                      <Route
+                        path="/checkout"
+                        element={
+                          <>
+                            <PagesLayout title="Checkout" />
+                            <Checkout />
+                          </>
+                        }
+                      />
+                      <Route
+                        path="/account"
+                        element={
+                          <>
+                            <PagesLayout title="Account" />
+                            <Account />
                           </>
                         }
                       />

@@ -1,14 +1,16 @@
-import { useParams } from 'react-router'
 import PagesLayout from '../components/layout/PagesLayout'
 import ProductDetails from '../pages/ProductsDetails'
+import { useProductDetails } from '../context/ProductDetailsContext'
 
 function ShopByCategoryRoute() {
-  const { selectedProduct } = useParams()
+    const { selectedProduct } = useProductDetails()
+
+  console.log(selectedProduct)
 
   return (
     <>
       <PagesLayout title={selectedProduct.title} />
-      <ProductDetails/>
+      <ProductDetails />
     </>
   )
 }

@@ -1,9 +1,16 @@
+import { useProductDetails } from '../../context/ProductDetailsContext';
 import { useProducts } from '../../context/ProductsContext'
 import { Link } from 'react-router'
 
 function Footer() {
 
-  const { category } = useProducts()
+   const { category } = useProducts()
+
+  const { setSelectedProduct } = useProductDetails()
+
+  const slugify = (str) =>
+    str.toLowerCase().trim().replace(/\s+/g, '-');
+
 
   const footerTopCards = [
     { heading: 'Fast Shipping', icon: 'bi-truck' },
@@ -160,7 +167,7 @@ function Footer() {
                       />
                     </div>
                     <div className="items-center gap-3 text-xs">
-                      <Link to="/" className="text-gray-600 text-sm hover:text-(--bg-secondary) mb-1">
+                      <Link  to={`/product-details/${slugify(product.title)}`} onClick={() => { setSelectedProduct(product) }} className="text-gray-600 text-sm hover:text-(--bg-secondary) mb-1">
                         {product.category}
                       </Link>
                       <h4>
